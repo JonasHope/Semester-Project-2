@@ -16,6 +16,16 @@ $purple: #6444AB;
 
 // custom classes
 
+// -------- Global --------- //
+
+.width {
+    max-width: 1200px;
+}
+
+.layer {
+    background-color: $light-grey;
+}
+
 // -------- Header --------- //
 
 .logo {
@@ -32,3 +42,5 @@ $purple: #6444AB;
 nav {
     color: $grey;
 }
+
+// -------- Home main --------- //

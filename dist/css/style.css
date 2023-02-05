@@ -2,6 +2,14 @@
   font-family: "felix";
   src: url("/fonts/FelixTitling.ttf");
 }
+.width {
+  max-width: 1200px;
+}
+
+.layer {
+  background-color: #EFF3F6;
+}
+
 .logo {
   font-family: "felix";
   font-weight: bold;
