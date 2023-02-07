@@ -1,11 +1,26 @@
+// Fonts
 @font-face {
     font-family: "felix";
     src: url("/fonts/FelixTitling.ttf");
 }
 
+ h1, h2, h3, h4, h5, h6, p, a, span {
+    font-family: "nimbus-sans", sans-serif;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+}
+
+.h5 {
+    line-height: 30px;
+}
+
 // Colors 
 $primary: #42218A;
 $secondary: #0D1329;
+$fade: #53595a79;
 $light-grey: #EFF3F6;
 $grey: #707070;
 $dark-grey: #53595A;
@@ -13,17 +28,57 @@ $white: #FFFFFF;
 $fe: #FEFEFE;
 $purple: #6444AB;
 
+.text-primary {
+    color: $secondary!important;
+}
+
+// buttons
+
+.btn-primary {
+    background-color: $primary;
+    letter-spacing: 1.1px;
+    font-weight: 500;
+    font-size: 1.15rem;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: $purple;
+}
+
+.create-listing {
+    position: relative;
+    
+}
 
 // custom classes
 
 // -------- Global --------- //
 
 .width {
-    max-width: 1200px;
+    max-width: 1220px;
+    padding: 5px 20px;
 }
 
 .layer {
     background-color: $light-grey;
+}
+
+.layer-fill {
+    fill: $light-grey;
+}
+
+.modal-bg {
+    background-color: $fade;
+}
+
+svg {
+    z-index: -1;
+}
+
+li {
+    list-style: none;
+    margin: 5px 0px;
 }
 
 // -------- Header --------- //

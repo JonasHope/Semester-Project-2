@@ -1,5 +1,5 @@
 {
-    "scripts": {
+  "scripts": {
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css"
   },

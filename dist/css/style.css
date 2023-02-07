@@ -2,12 +2,63 @@
   font-family: "felix";
   src: url("/fonts/FelixTitling.ttf");
 }
+h1, h2, h3, h4, h5, h6, p, a, span {
+  font-family: "nimbus-sans", sans-serif;
+  font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 800;
+}
+
+.h5 {
+  line-height: 30px;
+}
+
+.text-primary {
+  color: #0D1329 !important;
+}
+
+.btn-primary {
+  background-color: #42218A;
+  letter-spacing: 1.1px;
+  font-weight: 500;
+  font-size: 1.15rem;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #6444AB;
+}
+
+.create-listing {
+  position: relative;
+}
+
 .width {
-  max-width: 1200px;
+  max-width: 1220px;
+  padding: 5px 20px;
 }
 
 .layer {
   background-color: #EFF3F6;
+}
+
+.layer-fill {
+  fill: #EFF3F6;
+}
+
+.modal-bg {
+  background-color: rgba(83, 89, 90, 0.4745098039);
+}
+
+svg {
+  z-index: -1;
+}
+
+li {
+  list-style: none;
+  margin: 5px 0px;
 }
 
 .logo {
