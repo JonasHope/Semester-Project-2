@@ -4,7 +4,8 @@
     "watch": "sass --watch src/scss:dist/css"
   },
   "dependencies": {
-    "bootstrap": "^5.2.0",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.3",
     "node": "^19.6.0"
   },
   "devDependencies": {

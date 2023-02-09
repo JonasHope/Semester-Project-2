@@ -1,38 +1,23 @@
-// Fonts
-@font-face {
-    font-family: "felix";
-    src: url("/fonts/FelixTitling.ttf");
+@import "../../node_modules/bootstrap/scss/functions";
+
+@import "./variables";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/vendor/rfs";
+
+@import "./utilities";
+@import "./buttons";
+@import "./modal";
+@import "./reboot";
+@import "./rfs";
+@import "./card";
+
+
+.profile-img {
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 10px;
 }
-
- h1, h2, h3, h4, h5, h6, p, a, span {
-    font-family: "nimbus-sans", sans-serif;
-    font-style: normal;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 800;
-}
-
-.h5 {
-    line-height: 30px;
-}
-
-// Colors 
-$primary: #42218A;
-$secondary: #0D1329;
-$fade: #53595a79;
-$light-grey: #EFF3F6;
-$grey: #707070;
-$dark-grey: #53595A;
-$white: #FFFFFF;
-$fe: #FEFEFE;
-$purple: #6444AB;
-
-.text-primary {
-    color: $secondary!important;
-}
-
-// buttons
 
 .btn-primary {
     background-color: $primary;
@@ -44,11 +29,6 @@ $purple: #6444AB;
 
 .btn-primary:hover {
     background-color: $purple;
-}
-
-.create-listing {
-    position: relative;
-    
 }
 
 // custom classes
