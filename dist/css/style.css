@@ -10820,6 +10820,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   border-radius: 360px;
 }
 
+.nav-link {
+  margin: 0px 10px;
+}
+
 .profile-img {
   max-width: 250px;
   max-height: 250px;
