@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/eog4cop.css">
+    <link rel="stylesheet" href="./dist/css/style.css">
+    <title>Home page</title>
+</head>
+<body>
+    <header class="shadow-sm">
+        <div class="width d-flex align-items-center justify-content-between m-auto">
+            <div class="logo">
+                <a class="nav-link" aria-current="page" href="/">
+                    <div class="d-flex fs-2 py-2">
+                        <p class="m-0">Voom</p>
+                        <p class="m-0 text-secondary">Auction</p>
+                    </div>
+                </a>
+            </div>
+            <nav>
+                <button class="btn btn-secondary">Login</button>
+            </nav>
+        </div>
+    </header>
+    <section class="vh-100 modal-bg modal">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-lg-12 col-xl-11">
+            <div class="card text-black rounded-5 border-0 shadow-lg">
+              <div class="card-body p-md-5">
+                <div class="row justify-content-center">
+                  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">                    
+                    <h1 class="text-center fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</h1>                    
+                    <form id="loginForm" class="mx-1 mx-md-4">    
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                        <div class="form-floating flex-fill mb-0">
+                          <input type="email" class="form-control" placeholder="Email" name="email" required pattern="^[\w\-.]+@(stud.)?noroff.no$" title="Only @(stud.)noroff.no domains are allowed to register.">
+                          <label class="form-label" for="">Your Email</label>
+                        </div>
+                      </div>                 
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                        <div class="form-floating flex-fill mb-0">
+                          <input type="password" class="form-control" placeholder="Password" name="password" required minlength="8">
+                          <label class="form-label" for="sign-password">Password</label>
+                        </div>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                            <button type="submit" class="btn btn-primary btn-lg">Login</button>
+                          </div>
+                          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                            <a href="#" class="btn btn-secondary btn-lg">New user</a>
+                          </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <section class="vh-100 modal modal-bg">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card border-0 text-black rounded-5">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">                
+                  <h1 class="text-center fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign up</h1>                
+                  <form id="registerForm" class="mx-1 mx-md-4">                  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-floating flex-fill mb-0">
+                        <input type="text" class="form-control" placeholder="Name" name="name" required pattern="^[\w]+$" title="User name must only contain lower case and uppper case letters, numbers and underscore (_). Example: My_User123">
+                        <label class="form-label" for="">Your Name</label>
+                      </div>
+                    </div>                 
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                      <div class="form-floating flex-fill mb-0">
+                        <input type="email" class="form-control" placeholder="Email" name="email" required pattern="^[\w\-.]+@(stud.)?noroff.no$" title="Only @(stud.)noroff.no domains are allowed to register.">
+                        <label class="form-label" for="">Your Email</label>
+                      </div>
+                    </div>                 
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                      <div class="form-floating flex-fill mb-0">
+                        <input type="password" class="form-control" placeholder="Password" name="password" required minlength="8">
+                        <label class="form-label" for="sign-password">Password</label>
+                      </div>
+                    </div>                 
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                      <div class="form-floating flex-fill mb-0">
+                        <input type="" class="form-control" placeholder="URL for Avater" name="avatar">
+                        <label class="form-label" for="">Avatar</label>
+                      </div>
+                    </div>                 
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="submit" class="btn btn-primary btn-lg">Register</button>
+                    </div>                 
+                  </form>                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <main>
+        <div class="layer">
+            <div class="width d-flex flex-column-reverse flex-lg-row align-items-center m-auto">
+                <div class="pe-lg-5 col-12 col-sm-10 col-md-8 col-lg-4 d-flex flex-column align-items-center align-items-lg-start">
+                    <h1 class="mb-3">
+                        The action you have been waiting for
+                    </h1>
+                    <p class="h5 mb-4">
+                        Welcome to the most insane online auction site on the web, simply login and join the action!
+                    </p>
+                    <a href="/pages/listings/" class="btn btn-primary px-5 py-3">Listings</a>
+                </div>
+                <div class="col-12 col-md-10 col-lg-8">
+                    <img class="img-fluid" src="/images/Auction-amico.png">
+                </div>
+            </div>
+        </div>
+        <svg viewBox="0 0 500 60" preserveAspectRatio="xMinYMin meet">
+            <path class="layer-fill" d="M0, 30 C200, -30 350, 100 500, 30 L500, 00 L0, 0 Z"></path>
+        </svg>
+    </main>
+</body>
+</html>

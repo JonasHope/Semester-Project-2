@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "felix";
+    src: url("/fonts/FelixTitling.ttf");
+}
+
+ h1, h2, h3, h4, h5, h6, p, a, span {
+    font-family: "nimbus-sans", sans-serif;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 800;
+}
+
+.h5 {
+    line-height: 30px;
+}

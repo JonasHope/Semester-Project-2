@@ -1,0 +1,81 @@
+@import "../../node_modules/bootstrap/scss/functions";
+
+@import "./variables";
+
+@import "../../node_modules/bootstrap/scss/bootstrap";
+@import "../../node_modules/bootstrap/scss/vendor/rfs";
+
+@import "./utilities";
+@import "./buttons";
+@import "./modal";
+@import "./reboot";
+@import "./rfs";
+@import "./card";
+@import "./nav";
+
+.profile-img {
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 10px;
+}
+
+.btn-primary {
+    background-color: $primary;
+    letter-spacing: 1.1px;
+    font-weight: 500;
+    font-size: 1.15rem;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: $purple;
+}
+
+// custom classes
+
+// -------- Global --------- //
+
+.width {
+    max-width: 1220px;
+    padding: 5px 20px;
+}
+
+.layer {
+    background-color: $light-grey;
+}
+
+.layer-fill {
+    fill: $light-grey;
+}
+
+.modal-bg {
+    background-color: $fade;
+}
+
+svg {
+    z-index: -1;
+}
+
+li {
+    list-style: none;
+    margin: 5px 0px;
+}
+
+// -------- Header --------- //
+
+.logo {
+    font-family: "felix";
+    font-weight: bold;
+    color: $purple;
+}
+
+.logo-img {
+    width: 40px;
+    height: 50px;
+}
+
+nav {
+    color: $grey;
+}
+
+// -------- Home main --------- //
