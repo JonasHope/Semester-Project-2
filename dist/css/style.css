@@ -10784,7 +10784,6 @@ textarea.form-control-lg {
 .btn-secondary {
   background-color: #42218A;
   border: none;
-  border-radius: 360px;
   color: #FEFEFE;
 }
 
@@ -10794,6 +10793,21 @@ textarea.form-control-lg {
 
 .btn-success {
   border: none;
+}
+
+.btn-primary {
+  background-color: #42218A;
+  letter-spacing: 1.1px;
+  font-weight: 500;
+  font-size: 1.15rem;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #6444AB;
+}
+
+.btn {
   border-radius: 360px;
 }
 
@@ -10822,24 +10836,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 
 .nav-link {
   margin: 0px 10px;
-}
-
-.profile-img {
-  max-width: 250px;
-  max-height: 250px;
-  border-radius: 10px;
-}
-
-.btn-primary {
-  background-color: #42218A;
-  letter-spacing: 1.1px;
-  font-weight: 500;
-  font-size: 1.15rem;
-  border: none;
-}
-
-.btn-primary:hover {
-  background-color: #6444AB;
 }
 
 .width {
@@ -10881,6 +10877,12 @@ li {
 
 nav {
   color: #707070;
+}
+
+.profile-img {
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

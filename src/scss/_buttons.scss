@@ -1,7 +1,6 @@
 .btn-secondary {
     background-color: $primary;
     border: none;
-    border-radius: 360px;
     color: $fe
 }
 
@@ -11,5 +10,20 @@
 
 .btn-success {
     border: none;
+}
+
+.btn-primary {
+    background-color: $primary;
+    letter-spacing: 1.1px;
+    font-weight: 500;
+    font-size: 1.15rem;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: $purple;
+}
+
+.btn {
     border-radius: 360px;
 }
