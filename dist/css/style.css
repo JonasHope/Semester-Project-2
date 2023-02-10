@@ -10782,7 +10782,7 @@ textarea.form-control-lg {
 }
 
 .btn-secondary {
-  background-color: #42218A;
+  background-color: #53595A;
   border: none;
   color: #FEFEFE;
 }
@@ -10815,9 +10815,8 @@ textarea.form-control-lg {
   font-family: "felix";
   src: url("/fonts/FelixTitling.ttf");
 }
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, p, a, span {
+body {
   font-family: "nimbus-sans", sans-serif;
-  font-style: normal;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -10832,10 +10831,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   background-color: #FEFEFE !important;
   border: none;
   border-radius: 360px;
-}
-
-.nav-link {
-  margin: 0px 10px;
 }
 
 .width {
@@ -10864,8 +10859,11 @@ li {
   margin: 5px 0px;
 }
 
+.icon-size {
+  width: 20px;
+}
+
 .logo {
-  font-family: "felix";
   font-weight: bold;
   color: #6444AB;
 }

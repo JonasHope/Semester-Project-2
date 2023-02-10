@@ -43,10 +43,13 @@ li {
     margin: 5px 0px;
 }
 
+.icon-size {
+    width: 20px;
+}
+
 // -------- Header --------- //
 
 .logo {
-    font-family: "felix";
     font-weight: bold;
     color: $purple;
 }
@@ -67,3 +70,5 @@ nav {
     max-height: 250px;
     border-radius: 10px;
 }
+
+// -------- Listings --------- //
