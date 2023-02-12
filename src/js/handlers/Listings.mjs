@@ -14,6 +14,7 @@ export async function viewAllListings() {
         const listingsContainer = document.querySelector('#listingsContainer')
 
         clearElement(listingsContainer)
+        console.clear()
 
         renderListingsTemplates(filteredListings, listingsContainer)
     })

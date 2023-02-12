@@ -22,6 +22,7 @@ export function listingTemplate(listingData) {
     const viewListing = document.createElement("a")
 
     listing.setAttribute('id', listingData.id)
+    listing.classList.add('d-flex', 'flex-column')
 
     listingCard.classList.add("listing", "d-flex", "flex-column", "justify-content-between", "mb-1")
     
@@ -53,6 +54,7 @@ export function listingTemplate(listingData) {
     if (highestBid < 0) {
         bidAmount.innerHTML = '<small class="text-danger">No bids on listing</small>'
     }
+
 
     viewListing.setAttribute('href', `/pages/specific/${listingData.id}`);
     viewListing.innerText = 'View Listing';
