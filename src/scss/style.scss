@@ -69,6 +69,19 @@ nav {
     max-width: 250px;
     max-height: 250px;
     border-radius: 10px;
+
 }
 
 // -------- Listings --------- //
+
+.listing {
+    overflow: hidden;
+    width: 250px;
+    height: 400px;
+    box-shadow: 5px 5px 10px 5px $light-grey;
+    border-radius: 10px;
+}
+
+.hide {
+    display: none;
+}

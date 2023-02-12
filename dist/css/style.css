@@ -10883,4 +10883,16 @@ nav {
   border-radius: 10px;
 }
 
+.listing {
+  overflow: hidden;
+  width: 250px;
+  height: 400px;
+  box-shadow: 5px 5px 10px 5px #EFF3F6;
+  border-radius: 10px;
+}
+
+.hide {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
