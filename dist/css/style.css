@@ -10777,6 +10777,10 @@ textarea.form-control-lg {
   color: #707070 !important;
 }
 
+.text-purple {
+  color: #42218A;
+}
+
 .bg-light {
   background-color: #EFF3F6 !important;
 }
@@ -10799,7 +10803,6 @@ textarea.form-control-lg {
   background-color: #42218A;
   letter-spacing: 1.1px;
   font-weight: 500;
-  font-size: 1.15rem;
   border: none;
 }
 
@@ -10809,6 +10812,13 @@ textarea.form-control-lg {
 
 .btn {
   border-radius: 360px;
+}
+
+.btn-listing {
+  width: 250px;
+  background-color: #42218A;
+  border-radius: 10px;
+  color: #FEFEFE;
 }
 
 @font-face {
@@ -10886,13 +10896,9 @@ nav {
 .listing {
   overflow: hidden;
   width: 250px;
-  height: 400px;
+  min-height: 400px;
   box-shadow: 5px 5px 10px 5px #EFF3F6;
   border-radius: 10px;
-}
-
-.hide {
-  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
