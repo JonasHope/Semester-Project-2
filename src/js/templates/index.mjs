@@ -22,9 +22,9 @@ export function listingTemplate(listingData) {
     const viewListing = document.createElement("a")
 
     listing.setAttribute('id', listingData.id)
-    listing.classList.add('d-flex', 'flex-column')
+    listing.classList.add('d-flex', 'flex-column', 'align-items-center')
 
-    listingCard.classList.add("listing", "d-flex", "flex-column", "justify-content-between", "mb-1")
+    listingCard.classList.add("listing", "d-flex", "flex-column", "mb-1", "justify-content-between", "mx-2")
     
     imageContainer.classList.add("d-flex", "justify-content-center")
 
@@ -72,10 +72,12 @@ export function listingTemplate(listingData) {
         const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
         ends.innerText = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+        ends.classList.add('text-green');
 
         if (distance < 0) {
             clearInterval(x);
             ends.innerHTML = '<small class="text-danger"> Time is up! Auction ended.</small>'
+            listing.classList.add("hide")
         }
     }, 1000);
 

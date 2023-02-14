@@ -5,7 +5,7 @@ const action = "/listings";
 
 export async function getListings() {
 
-    const ListingsURL = `${API_SOCIAL_URL}${action}?_seller=true&_bids=true`;
+    const ListingsURL = `${API_SOCIAL_URL}${action}?_seller=true&_bids=true&sort=created&sortOrder=desc`;
 
     const response = await authFetch(ListingsURL)
 

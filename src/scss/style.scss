@@ -77,7 +77,11 @@ nav {
 .listing {
     overflow: hidden;
     width: 250px;
-    min-height: 400px;
+    min-height: 500px;
     box-shadow: 5px 5px 10px 5px $light-grey;
     border-radius: 10px;
+}
+
+.hide {
+    display: none!important;
 }
