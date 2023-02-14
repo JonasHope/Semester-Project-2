@@ -10825,6 +10825,11 @@ textarea.form-control-lg {
   color: #FEFEFE;
 }
 
+.btn-listing:hover {
+  background-color: #6444AB;
+  color: #FEFEFE;
+}
+
 @font-face {
   font-family: "felix";
   src: url("/fonts/FelixTitling.ttf");
@@ -10903,6 +10908,13 @@ nav {
   min-height: 500px;
   box-shadow: 5px 5px 10px 5px #EFF3F6;
   border-radius: 10px;
+}
+
+.listingCard:hover {
+  background-color: #EFF3F6;
+  transform: scale(1.02);
+  transition: ease-in-out;
+  box-shadow: none;
 }
 
 .hide {

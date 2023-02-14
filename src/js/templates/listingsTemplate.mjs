@@ -1,6 +1,6 @@
 export function listingTemplate(listingData) {
 
-    const listing = document.createElement("div");
+    const listing = document.createElement("a");
 
     const listingCard = document.createElement("div");
 
@@ -21,8 +21,9 @@ export function listingTemplate(listingData) {
 
     const viewListing = document.createElement("a")
 
+    listing.setAttribute('href', `/pages/specific/?id=${listingData.id}`)
     listing.setAttribute('id', listingData.id)
-    listing.classList.add('d-flex', 'flex-column', 'align-items-center')
+    listing.classList.add( 'mb-5', 'listingCard', 'd-flex', 'flex-column', 'align-items-center', 'text-decoration-none', 'text-primary')
 
     listingCard.classList.add("listing", "d-flex", "flex-column", "mb-1", "justify-content-between", "mx-2")
     
@@ -56,9 +57,9 @@ export function listingTemplate(listingData) {
     }
 
 
-    viewListing.setAttribute('href', `/pages/specific/${listingData.id}`);
+    viewListing.setAttribute('href', `/pages/specific/?id=${listingData.id}`);
     viewListing.innerText = 'View Listing';
-    viewListing.classList.add('btn', 'btn-listing', 'mb-5')
+    viewListing.classList.add('btn', 'btn-listing')
 
         // Count down on listings
     const countDown = new Date(listingData.endsAt).getTime();
@@ -103,6 +104,6 @@ export function listingTemplate(listingData) {
 
 }
 
-export function renderListingsTemplates(postDataList, parent) {
-    parent.append(...postDataList.map(listingTemplate))
+export function renderListingsTemplates(listingDataList, parent) {
+    parent.append(...listingDataList.map(listingTemplate))
 }

@@ -14,10 +14,10 @@ export async function getListings() {
 
 export async function getListing(id) {
     if (!id) {
-    throw new Error("To get a post, a postID is required")
+    throw new Error("To get a listing, a listingID is required")
     }
 
-    const listingURL = `${API_SOCIAL_URL}${action}${id}`;
+    const listingURL = `${API_SOCIAL_URL}${action}/${id}?_seller=true&_bids=true`;
 
     const response = await authFetch(listingURL)
 

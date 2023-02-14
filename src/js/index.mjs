@@ -1,7 +1,8 @@
 import { regFormListener } from "./handlers/register.mjs";
 import { loginFormListener } from "./handlers/login.mjs";
-import { viewAllListings } from "./handlers/Listings.mjs";
+import { viewAllListings } from "./handlers/listings.mjs";
 import { searchForListing } from "./handlers/search.mjs";
+import { viewSpecificListing } from "./handlers/listing.mjs";
 
 switch(location.pathname) {
     case "/":
@@ -13,4 +14,8 @@ switch(location.pathname) {
     case "/pages/listings/":
         viewAllListings();
         searchForListing();
+        break;
+    case "/pages/specific/index.html":
+    case "/pages/specific/":
+        viewSpecificListing();
 }

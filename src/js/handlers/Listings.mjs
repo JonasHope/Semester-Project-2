@@ -1,4 +1,4 @@
-import { renderListingsTemplates } from "../templates/index.mjs";
+import { renderListingsTemplates } from "../templates/listingsTemplate.mjs";
 import * as methods from "../api/listings/read.mjs"
 
 

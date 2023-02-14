@@ -82,6 +82,13 @@ nav {
     border-radius: 10px;
 }
 
+.listingCard:hover {
+    background-color: $light-grey;
+    transform:scale(1.02);
+    transition: ease-in-out;
+    box-shadow: none;
+}
+
 .hide {
     display: none!important;
 }
