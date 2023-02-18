@@ -3,6 +3,7 @@ import { loginFormListener } from "./handlers/login.mjs";
 import { viewAllListings } from "./handlers/listings.mjs";
 import { searchForListing } from "./handlers/search.mjs";
 import { viewSpecificListing } from "./handlers/listing.mjs";
+import { viewProfileListings } from "./handlers/profileListings.mjs";
 
 switch(location.pathname) {
     case "/":
@@ -18,4 +19,5 @@ switch(location.pathname) {
     case "/pages/specific/index.html":
     case "/pages/specific/":
         viewSpecificListing();
+        viewProfileListings();
 }

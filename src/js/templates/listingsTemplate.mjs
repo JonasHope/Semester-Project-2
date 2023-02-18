@@ -1,109 +1,83 @@
+import displayCountdown from "../ui/countdown.mjs";
+
 export function listingTemplate(listingData) {
+	const listing = document.createElement("a");
 
-    const listing = document.createElement("a");
+	const listingCard = document.createElement("div");
 
-    const listingCard = document.createElement("div");
+	const imageContainer = document.createElement("div");
+	const imageContent = document.createElement("img");
 
-    const imageContainer = document.createElement("div");
-    const imageContent = document.createElement("img");
+	const listingContent = document.createElement("div");
 
-    const listingContent = document.createElement("div");
+	const listingInfo = document.createElement("div");
+	const title = document.createElement("h2");
+	const description = document.createElement("p");
+	const ends = document.createElement("small");
 
-    const listingInfo = document.createElement("div");
-    const title = document.createElement("h2");
-    const description = document.createElement("p");
-    const ends = document.createElement("small");
+	const creds = document.createElement("div");
+	const author = document.createElement("small");
+	const hr = document.createElement("hr");
+	const bidAmount = document.createElement("strong");
 
-    const creds = document.createElement("div")
-    const author = document.createElement("small");
-    const hr = document.createElement("hr");
-    const bidAmount = document.createElement("strong");
+	listing.setAttribute("href", `/pages/specific/?id=${listingData.id}&name=${listingData.seller.name}`);
+	listing.setAttribute("id", listingData.id);
+	listing.classList.add("mb-5", "listingCard", "d-flex", "flex-column", "align-items-center", "text-decoration-none", "text-primary");
 
-    const viewListing = document.createElement("a")
+	listingCard.classList.add("listing", "d-flex", "flex-column", "mb-1", "justify-content-between", "mx-2");
 
-    listing.setAttribute('href', `/pages/specific/?id=${listingData.id}`)
-    listing.setAttribute('id', listingData.id)
-    listing.classList.add( 'mb-5', 'listingCard', 'd-flex', 'flex-column', 'align-items-center', 'text-decoration-none', 'text-primary')
+	imageContainer.classList.add("d-flex", "justify-content-center");
 
-    listingCard.classList.add("listing", "d-flex", "flex-column", "mb-1", "justify-content-between", "mx-2")
-    
-    imageContainer.classList.add("d-flex", "justify-content-center")
+	imageContent.setAttribute("src", listingData.media);
+	imageContent.setAttribute("alt", listingData.title);
+	imageContent.setAttribute("onerror", 'this.onerror=null;this.src="https://media.giphy.com/media/l3V0HSvyvbXrKHmpO/giphy.gif"');
+	imageContent.classList.add("profile-img");
 
-    imageContent.setAttribute('src', listingData.media)
-    imageContent.setAttribute('onerror', 'this.onerror=null;this.src="https://media.giphy.com/media/l3V0HSvyvbXrKHmpO/giphy.gif"');
-    imageContent.classList.add("profile-img")
+	listingContent.classList.add("px-3");
 
-    listingContent.classList.add("px-3")
+	title.innerText = listingData.title;
+	title.classList.add("h5");
 
-    title.innerText = listingData.title;
-    title.classList.add("h5")
+	description.innerText = listingData.description;
 
-    description.innerText = listingData.description;
+	creds.classList.add("p-3");
 
-    creds.classList.add("p-3")
+	author.innerText = `By: ${listingData.seller.name}`;
 
-    author.innerText = `By: ${listingData.seller.name}`
+	hr.classList.add("mt-0");
 
-    hr.classList.add("mt-0")
+	const bids = listingData.bids;
+	const highestBid = Math.max(...bids.map((winningBid) => winningBid.amount));
 
-    const bids = listingData.bids;
-    const highestBid = Math.max(...bids.map(winningBid => winningBid.amount))
+	bidAmount.innerHTML = '<small class="text-purple">Highest bid:</small>' + " " + '<img src="/src/icons/gem.svg">' + " " + highestBid;
+	bidAmount.classList.add("text-center");
 
-    bidAmount.innerHTML = '<small class="text-purple">Highest bid:</small>' + ' ' + '<img src="/src/icons/gem.svg">' + ' ' + highestBid
-    bidAmount.classList.add("text-center")
-    
-    if (highestBid < 0) {
-        bidAmount.innerHTML = '<small class="text-danger">No bids on listing</small>'
-    }
+	if (highestBid < 0) {
+		bidAmount.innerHTML = '<small class="text-danger">No bids on listing</small>';
+	}
 
+	displayCountdown(listingData, ends, listing);
 
-    viewListing.setAttribute('href', `/pages/specific/?id=${listingData.id}`);
-    viewListing.innerText = 'View Listing';
-    viewListing.classList.add('btn', 'btn-listing')
+	listingContent.appendChild(imageContainer);
 
-        // Count down on listings
-    const countDown = new Date(listingData.endsAt).getTime();
-    const x = setInterval(function() {
-        const now = new Date().getTime();
-        const distance = countDown - now;
+	listingContent.appendChild(listingInfo);
+	listingInfo.appendChild(ends);
+	listingInfo.appendChild(title);
+	listingInfo.appendChild(description);
 
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+	creds.appendChild(author);
+	creds.appendChild(hr);
+	creds.appendChild(bidAmount);
 
-        ends.innerText = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
-        ends.classList.add('text-green');
+	imageContainer.appendChild(imageContent);
 
-        if (distance < 0) {
-            clearInterval(x);
-            ends.innerHTML = '<small class="text-danger"> Time is up! Auction ended.</small>'
-            listing.classList.add("hide")
-        }
-    }, 1000);
+	listingCard.appendChild(listingContent);
+	listingCard.appendChild(creds);
+	listing.appendChild(listingCard);
 
-    listingContent.appendChild(imageContainer);
-
-    listingContent.appendChild(listingInfo);
-    listingInfo.appendChild(ends);
-    listingInfo.appendChild(title);
-    listingInfo.appendChild(description);
-
-    creds.appendChild(author);
-    creds.appendChild(hr)
-    creds.appendChild(bidAmount)
-
-    imageContainer.appendChild(imageContent);
-
-    listingCard.appendChild(listingContent);
-    listingCard.appendChild(creds);
-    listing.appendChild(listingCard)
-    listing.appendChild(viewListing);
-    
-    return listing
-
+	return listing;
 }
 
 export function renderListingsTemplates(listingDataList, parent) {
-    parent.append(...listingDataList.map(listingTemplate))
+	parent.append(...listingDataList.map(listingTemplate));
 }
