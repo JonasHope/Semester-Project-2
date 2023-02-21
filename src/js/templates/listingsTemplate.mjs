@@ -6,7 +6,7 @@ export function listingTemplate(listingData) {
 	const listingCard = document.createElement("div");
 
 	const imageContainer = document.createElement("div");
-	const imageContent = document.createElement("img");
+	const imageContent = document.createElement("div");
 
 	const listingContent = document.createElement("div");
 
@@ -28,10 +28,9 @@ export function listingTemplate(listingData) {
 
 	imageContainer.classList.add("d-flex", "justify-content-center");
 
-	imageContent.setAttribute("src", listingData.media);
+	imageContent.setAttribute("style", `background-image: url(${listingData.media[0]})`);
 	imageContent.setAttribute("alt", listingData.title);
-	imageContent.setAttribute("onerror", 'this.onerror=null;this.src="https://media.giphy.com/media/l3V0HSvyvbXrKHmpO/giphy.gif"');
-	imageContent.classList.add("profile-img");
+	imageContent.classList.add("listing-img");
 
 	listingContent.classList.add("px-3");
 
@@ -50,7 +49,7 @@ export function listingTemplate(listingData) {
 	const highestBid = Math.max(...bids.map((winningBid) => winningBid.amount));
 
 	bidAmount.innerHTML = '<small class="text-purple">Highest bid:</small>' + " " + '<img src="/src/icons/gem.svg">' + " " + highestBid;
-	bidAmount.classList.add("text-center");
+	bidAmount.classList.add("text-center", "bg-light", "p-2", 'border-fix');
 
 	if (highestBid < 0) {
 		bidAmount.innerHTML = '<small class="text-danger">No bids on listing</small>';
@@ -65,11 +64,11 @@ export function listingTemplate(listingData) {
 	listingInfo.appendChild(title);
 	listingInfo.appendChild(description);
 
-	creds.appendChild(author);
 	creds.appendChild(hr);
-	creds.appendChild(bidAmount);
+	creds.appendChild(author);
 
 	imageContainer.appendChild(imageContent);
+	imageContent.appendChild(bidAmount);
 
 	listingCard.appendChild(listingContent);
 	listingCard.appendChild(creds);

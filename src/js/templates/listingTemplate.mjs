@@ -52,63 +52,20 @@ export function specificListingTemplate(listingSpecific) {
     hr.classList.add('w-75')
     description.classList.add('description-width','mt-2', 'w-75')
 
-    mediaContainer.classList.add('slider')
+    mediaContainer.classList.add('d-flex', 'mediaContainer')
 
-    const selector = document.createElement('div')
-    const allMedia = listingSpecific.media;
-    const total = allMedia.length
-   /* allMedia.map((fetchMedia) => {
-        const mediaContent = document.createElement('div');
-        const media = document.createElement('img');
+    const fetchMedia = listingSpecific.media;
 
-        media.setAttribute('src', fetchMedia)
-        media.setAttribute("onerror", 'this.onerror=null;this.src="https://media.giphy.com/media/l3V0HSvyvbXrKHmpO/giphy.gif"');
-        media.setAttribute('alt', listingSpecific.title)
+    fetchMedia.map((listingImages) => {
+        const mediaItem = document.createElement('div')
+        const mediaImg = document.createElement('div')
 
-        media.classList.add( 'rounded-1', 'w-100')
-        mediaContent.classList.add('selector-img')
+        mediaImg.setAttribute('style', `background-image: url(${listingImages})`)
+        mediaImg.classList.add('listing-img')
 
-        selector.appendChild(mediaContent)
-        mediaContent.appendChild(media);
-    })*/
-    
-    const chooseSlide = document.createElement('div')
-    chooseSlide.classList.add('slides')
-    chooseSlide.setAttribute('id', 'slides')
-    selector.appendChild(chooseSlide)
-
-    for (let count = 0; count < total; count +=1) {
-        const selecting = allMedia.slice(count,count+1);
-        const sliderDiv = document.createElement("div");
-        sliderDiv.id = `selector${(count+1)/1}`;
-
-        sliderDiv.innerHTML = 
-        `<a href="#slide${(count+1)/1}">
-            <div class="selector-img" style="background-image: url('${selecting}')"</div>
-        </div>`
-
-        chooseSlide.appendChild(sliderDiv);
-    }
-    
-    selector.classList.add('d-flex')
-
-    const slides = document.createElement('div')
-    slides.classList.add('slides')
-    slides.setAttribute('id', 'slides')
-    mediaContainer.appendChild(slides)
-
-    for (let count = 0; count < total; count +=1) {
-        const slide = allMedia.slice(count,count+1);
-        const sliderDiv = document.createElement("div");
-        sliderDiv.id = `slide${(count+1)/1}`;
-
-        sliderDiv.innerHTML = 
-        `<div class="" name="slider">
-            <div class="listing-img" style="background-image: url('${slide}')"</div>
-        </div>`
-
-        slides.appendChild(sliderDiv);
-    }
+        mediaItem.appendChild(mediaImg);
+        mediaContainer.appendChild(mediaItem);
+    })
 
     // Seller Content
     textSeller.classList.add('col-12', 'col-sm-4', 'd-flex', 'flex-sm-column', 'justify-content-center','justify-content-sm-start', 'mb-4', 'mb-sm-0', 'mx-auto')
@@ -199,9 +156,13 @@ export function specificListingTemplate(listingSpecific) {
     layer.classList.add('bg-light')
     currentBidsContainer.classList.add('mt-5', 'mt-lg-0')
 
+    // More listings by <name> section.
+
     moreListings.classList.add('width', 'mx-auto')
     moreHeader.classList.add('h5', 'text-secondary')
     moreHeader.innerText = `More listings from ${listingSpecific.seller.name}`
+
+    // Appends >>
 	
     specificListing.appendChild(layer);
     specificListing.appendChild(bidContainer);
@@ -220,8 +181,7 @@ export function specificListingTemplate(listingSpecific) {
     textContent.appendChild(description);
     textContent.appendChild(hr);
     textContent.appendChild(tags);
-    textContent.appendChild(selector)
-    textContent.appendChild(mediaContainer);
+    textContent.appendChild(mediaContainer)
 
     textSeller.appendChild(name);
     textSeller.appendChild(imgContainer);
