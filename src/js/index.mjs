@@ -4,6 +4,10 @@ import { viewAllListings } from "./handlers/listings.mjs";
 import { searchForListing } from "./handlers/search.mjs";
 import { viewSpecificListing } from "./handlers/listing.mjs";
 import { viewProfileListings } from "./handlers/profileListings.mjs";
+import { viewProfileInfo } from "./handlers/profileInfo.mjs";
+import { viewUserListings } from "./handlers/myProfileListings.mjs";
+import { updateAvatarURL } from "./handlers/changeAvatar.mjs";
+
 
 switch(location.pathname) {
     case "/":
@@ -20,4 +24,11 @@ switch(location.pathname) {
     case "/pages/specific/":
         viewSpecificListing();
         viewProfileListings();
+        break;
+    case "/pages/profile/index.html":
+    case "/pages/profile/":
+        viewProfileInfo();
+        viewUserListings();
+        updateAvatarURL();
+ 
 }
