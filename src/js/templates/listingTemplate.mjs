@@ -24,6 +24,7 @@ export function specificListingTemplate(listingSpecific) {
     const bidContainer = document.createElement('div');
     const layer = document.createElement('div');
 
+    const allBidsContainer = document.createElement('div')
     const bidInputContainer = document.createElement('div');
     const bidHeader = document.createElement('h2');
     const bidContent = document.createElement('div');
@@ -52,7 +53,7 @@ export function specificListingTemplate(listingSpecific) {
     hr.classList.add('w-75')
     description.classList.add('description-width','mt-2', 'w-75')
 
-    mediaContainer.classList.add('d-flex', 'mediaContainer')
+    mediaContainer.classList.add('d-flex', 'flex-wrap', 'justify-content-center', 'justify-content-sm-start', 'mediaContainer')
 
     const fetchMedia = listingSpecific.media;
 
@@ -101,7 +102,9 @@ export function specificListingTemplate(listingSpecific) {
 
     bidContent.classList.add('d-flex', 'flex-column', 'align-items-center', 'align-items-sm-start');
     bidInput.classList.add('form-control', 'input-width');
-    bidButton.classList.add('btn', 'btn-success', 'px-5', 'mt-2');
+    bidButton.classList.add('btn', 'btn-primary', 'px-5', 'mt-2');
+    bidForm.classList.add('d-flex', 'flex-column')
+    bidHeader.classList.add('p-1')
 
     bidInput.setAttribute('name', 'amount')
     bidInput.setAttribute('placeholder', 'Enter a bid')
@@ -147,14 +150,17 @@ export function specificListingTemplate(listingSpecific) {
         bidAmount.innerHTML =  '<strong>bid:</strong>' + " " + bidNumber + " " + '<img src="/src/icons/gem.svg">'
 
         bidsContent.classList.add('bidder-card', 'mt-2')
+        allBids.classList.add('h4')
         
-        currentBidsContainer.appendChild(bidsContent);
+        currentBidsContainer.appendChild(allBidsContainer)
+        allBidsContainer.appendChild(bidsContent);
         bidsContent.appendChild(bidderName);
         bidsContent.appendChild(bidAmount);
     })
 
     layer.classList.add('bg-light')
-    currentBidsContainer.classList.add('mt-5', 'mt-lg-0')
+    allBidsContainer.classList.add('d-flex', 'flex-wrap', 'justify-content-center')
+    currentBidsContainer.classList.add('mt-5', 'mt-lg-0', 'bids-container')
 
     // More listings by <name> section.
 

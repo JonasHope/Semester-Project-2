@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="shadow-sm">
-        <div class="width d-flex align-items-center justify-content-between m-auto">
+        <div class="width d-flex flex-column flex-sm-row align-items-center justify-content-between m-auto">
             <div class="logo">
                 <a class="nav-link" aria-current="page" href="../../index.html">
                     <div class="d-flex fs-2 py-2">
@@ -38,7 +38,7 @@
                     <img id="profile-img" class="profile-img">
                         <form id="changeAvatar" class="d-flex flex-column mt-2">
                             <input class="form-control" type="text" name="avatar" placeholder="Write URL here..">
-                            <button type="submit" class="btn btn-success mt-2">Change avatar</button>
+                            <button type="submit" class="btn btn-primary mt-2">Change avatar</button>
                         </form>
                 </div>
                 <div class="ms-lg-5 mt-4 ">
@@ -64,12 +64,44 @@
         </svg>
         <div class="d-flex flex-column-reverse flex-lg-row justify-content-between width mx-auto">
             <div class="d-flex justify-content-lg-start justify-content-center mt-4 mt-lg-0">
-                <h2 class="text-primary h3">My Active Listings</h2>
+                <h2 id="listingsHeader" class="text-primary h3">My Active Listings</h2>
             </div>
             <div class="d-flex justify-content-lg-end justify-content-center">
-                <button class="btn btn-success btn-lg create-listing">Create Listing</button>
+                <a href="#target" class="btn btn-primary d-flex align-items-center create-listing">Create Listing</a>
             </div>
         </div>
+            <form id="target" class="col-lg-6 col-sm-8 col-10 mx-auto my-2 p-5 border hide">
+                <h3>Create a listing</h3>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">Title</span>
+                    <input type="text" name="title" class="form-control" placeholder="Name of listing" aria-label="title" aria-describedby="basic-addon1" required>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon2">Description</span>
+                    <textarea type="text" name="description" class="form-control" placeholder="Description of the listing" aria-label="With textarea" aria-describedby="basic-addon2"></textarea>
+                </div>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon3">Tags</span>
+                    <input type="text" name="tags" class="form-control" id="basic-url" placeholder="tag1, tag2, tag3" aria-describedby="basic-addon3">
+                </div>
+
+                <label for="basic-url" class="form-label">Images</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon3">URL</span>
+                    <input type="text" name="media" class="form-control" id="basic-url" placeholder="https://example-1.com/, https://example-2.com/" aria-describedby="basic-addon3">
+                </div>
+
+                <label for="date-picker" class="form-label">Duration</label>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon3">Ending date</span>
+                    <input type="datetime-local" name="endsAt" class="form-control" id="date-picker" aria-describedby="basic-addon3" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary px-4 py-2">Submit</button>
+            </form>
+        <hr class="width mx-auto">
         <div id="profile-listings" class="listings width m-auto d-flex flex-wrap justify-content-center justify-content-lg-between">
 
         </div>
