@@ -12,9 +12,13 @@ import { createListingForm } from "./handlers/createListing.mjs";
 
 switch(location.pathname) {
     case "/":
-    case "/index.html":
     case "./":
+    case "/index.html":
     case "./index.html":
+    case "/Semester-Project-2/":
+    case "/Semester-Project-2/./":
+    case "/Semester-Project-2/index.html":
+    case "/Semester-Project-2/./index.html":
         regFormListener();
         loginFormListener();
         break;
@@ -22,6 +26,10 @@ switch(location.pathname) {
     case "/pages/listings/":
     case "./pages/listings/index.html":
     case "./pages/listings/":
+    case "/Semester-Project-2/pages/listings/index.html":
+    case "/Semester-Project-2/pages/listings/":
+    case "/Semester-Project-2/./pages/listings/index.html":
+    case "/Semester-Project-2/./pages/listings/":
         viewAllListings();
         searchForListing();
         break;
@@ -29,6 +37,10 @@ switch(location.pathname) {
     case "/pages/specific/":
     case "./pages/specific/index.html":
     case "./pages/specific/":
+    case "/Semester-Project-2/pages/specific/index.html":
+    case "/Semester-Project-2/pages/specific/":
+    case "/Semester-Project-2/./pages/specific/index.html":
+    case "/Semester-Project-2/./pages/specific/":
         viewSpecificListing();
         viewProfileListings();
         break;
@@ -36,6 +48,10 @@ switch(location.pathname) {
     case "/pages/profile/":
     case "./pages/profile/index.html":
     case "./pages/profile/":
+    case "/Semester-Project-2/pages/profile/index.html":
+    case "/Semester-Project-2/pages/profile/":
+    case "/Semester-Project-2/./pages/profile/index.html":
+    case "/Semester-Project-2/./pages/profile/":
         viewProfileInfo();
         viewUserListings();
         updateAvatarURL();
