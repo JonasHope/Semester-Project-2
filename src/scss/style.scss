@@ -12,6 +12,7 @@
 @import "./rfs";
 @import "./card";
 @import "./nav";
+@import "./input-group";
 
 // custom classes
 
@@ -43,10 +44,21 @@ li {
     margin: 5px 0px;
 }
 
+.icon-size {
+    width: 20px;
+}
+
+body {
+    margin:0px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 // -------- Header --------- //
 
 .logo {
-    font-family: "felix";
     font-weight: bold;
     color: $purple;
 }
@@ -66,4 +78,83 @@ nav {
     max-width: 250px;
     max-height: 250px;
     border-radius: 10px;
+
+}
+
+// -------- Listings --------- //
+
+.listing {
+    overflow: hidden;
+    width: 300px;
+    min-height: 500px;
+    box-shadow: 5px 5px 10px 5px $light-grey;
+    border-radius: 10px;
+}
+
+.listingCard:hover {
+    background-color: $light-grey;
+    transform:scale(1.02);
+    transition: ease-in-out;
+    box-shadow: none;
+    border-radius: 10px;
+}
+
+.border-fix {
+    border-radius: 0px 0px 15px 0px;
+}
+
+.hide {
+    display: none!important;
+}
+
+.description-width {
+    overflow: hidden;
+}
+
+.input-width {
+    width: 250px;
+    border-radius: 360px;
+}
+
+.bidder-card {
+    min-width: 250px;
+    border-radius: 360px;
+    background-color: lightgreen;
+    padding: 5px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.bids-container {
+    max-height: 200px;
+    overflow-y: scroll;
+    text-align: center;
+}
+
+.selector-img {
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+    overflow:hidden;
+    margin: 5px 5px;
+    cursor: pointer;
+}
+
+.listing-img {
+    background-size: cover;
+    background-position: center;
+    min-width: 300px;
+    min-height: 300px;
+    margin: 5px;
+}
+
+.mediaContainer {
+    max-width: 620px;
+    padding-bottom: 10px;
+}
+
+.listing-img:hover {
+    transform:scale(1.4);
+    transition: ease-in-out;
 }

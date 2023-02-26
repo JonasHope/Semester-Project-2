@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="shadow-sm">
-        <div class="width d-flex align-items-center justify-content-between m-auto">
+        <div class="width d-flex flex-column flex-sm-row align-items-center justify-content-between m-auto">
             <div class="logo">
                 <a class="nav-link" aria-current="page" href="../../index.html">
                     <div class="d-flex fs-2 py-2">
@@ -21,24 +21,32 @@
             </div>
             <nav>
                 <ul class="d-flex align-items-center m-0 p-0">
-                    <li><a class="nav-link" href="../../index.html" aria-current="page">Home</a></li>
-                    <li><a class="nav-link" href="../listings/index.html" aria-current="page">Listings</a></li>
-                    <li><a href="../profile/index.html">
-                        <img class="nav-link" src="../../node_modules/bootstrap-icons/icons/person-circle.svg" aria-current="page">
+                    <li class="ms-4"><a class="nav-link" href="../../index.html" aria-current="page">Home</a></li>
+                    <li class="ms-4"><a class="nav-link" href="../listings/index.html" aria-current="page">Listings</a></li>
+                    <li class="ms-4"><a href="../profile/index.html">
+                        <img class="nav-link icon-size" src="../../src/icons/person-circle.svg" aria-current="page">
                     </a></li>
+                    <li class="ms-4"><button class="btn btn-secondary">Logout</button></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <svg viewBox="0 0 500 60" preserveAspectRatio="xMinYMin meet">
-            <path class="layer-fill" d="M0, 30 C200, -30 350, 100 500, 30 L500, 00 L0, 0 Z"></path>
-        </svg>
-        <div class="d-flex justify-content-between width mx-auto">
-            <div>
-                <h1 class="text-primary h2">My Listings</h1>
+        <div>
+            <div class="bg-light pt-4">
+                <div class="width mx-auto">
+                    <input id="searchbar" class="p-2 border-0 w-50 d-flex mx-auto" type="search" placeholder="Search for listing..">
+                </div>
             </div>
+            <svg viewBox="0 0 500 50" preserveAspectRatio="xMinYMin meet">
+                <path class="layer-fill" d="M0, 30 C200, -10 350, 70 500, 30 L500, 00 L0, 0 Z"></path>
+            </svg>
         </div>
+        <div class="width m-auto">
+            <h1 class="h2 text-center text-lg-start ms-2 mb-4">Listings</h1>
+        </div>
+        <div id="listingsContainer" class="listings width m-auto d-flex flex-wrap justify-content-center justify-content-lg-between"></div>
     </main>
+    <script src="../../src/js/index.mjs" type="module"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 .btn-secondary {
-    background-color: $primary;
+    background-color: $dark-grey;
     border: none;
     color: $fe
 }
@@ -16,7 +16,6 @@
     background-color: $primary;
     letter-spacing: 1.1px;
     font-weight: 500;
-    font-size: 1.15rem;
     border: none;
 }
 
@@ -26,4 +25,16 @@
 
 .btn {
     border-radius: 360px;
+}
+
+.btn-listing {
+    width:250px;
+    background-color: $primary;
+    border-radius: 10px;
+    color: $fe
+}
+
+.btn-listing:hover {
+    background-color: $purple;
+    color: $fe;
 }
