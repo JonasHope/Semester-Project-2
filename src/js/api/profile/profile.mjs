@@ -7,13 +7,22 @@ const media = "/media"
 
 const method = "put";
 
-const profileFetch = JSON.parse(localStorage.profile);
-const name = profileFetch.name;
+function userProfile() {
+    try {
+        const profileFetch = JSON.parse(localStorage.profile);
+        const name = profileFetch.name;
+        return name
+    } catch {
+        null
+    }
+}
+
+const namey = userProfile()
 
 
 export async function getProfile() {
 
-    const profileURL = `${API_SOCIAL_URL}${action}${name}?_listings=true`;
+    const profileURL = `${API_SOCIAL_URL}${action}${namey}?_listings=true`;
 
     const response = await authFetch(profileURL)
 
@@ -22,7 +31,7 @@ export async function getProfile() {
 
 export async function getUserListings() {
 
-    const ListingsURL = `${API_SOCIAL_URL}${action}${name}${listings}?_seller=true&_bids=true&sort=created&sortOrder=desc`;
+    const ListingsURL = `${API_SOCIAL_URL}${action}${namey}${listings}?_seller=true&_bids=true&sort=created&sortOrder=desc`;
 
     const response = await authFetch(ListingsURL)
 
@@ -31,7 +40,7 @@ export async function getUserListings() {
 
 export async function putNewAvatar(newAvatar) {
 
-    const newAvatarURL = `${API_SOCIAL_URL}${action}${name}${media}`;
+    const newAvatarURL = `${API_SOCIAL_URL}${action}${namey}${media}`;
 
     const response = await authFetch(newAvatarURL, {
         method: method,

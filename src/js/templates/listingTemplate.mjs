@@ -139,7 +139,7 @@ export function specificListingTemplate(listingSpecific) {
         return (b.amount - a.amount)
     })
     bids.map((fetchBids) => {
-
+    
         const bidsContent = document.createElement('div');
         const bidderName = document.createElement('strong');
         const bidAmount = document.createElement('strong');
@@ -149,7 +149,7 @@ export function specificListingTemplate(listingSpecific) {
         const bidNumber = fetchBids.amount;
         bidAmount.innerHTML =  '<strong>bid:</strong>' + " " + bidNumber + " " + '<img src="/src/icons/gem.svg">'
 
-        bidsContent.classList.add('bidder-card', 'mt-2')
+        bidsContent.classList.add('bidder-card', 'mt-2', 'mx-2')
         allBids.classList.add('h4')
         
         currentBidsContainer.appendChild(allBidsContainer)
@@ -210,6 +210,7 @@ export function specificListingTemplate(listingSpecific) {
 
     return specificListing
 }
+
 
 export function renderSpecificListingTemplate(listingSpecific, parent) {
     parent.append(specificListingTemplate(listingSpecific))
