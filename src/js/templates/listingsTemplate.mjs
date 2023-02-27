@@ -1,4 +1,4 @@
-import displayCountdown from "../ui/countdown.mjs";
+import displayCountdown from "../ui/count-down.mjs";
 
 export function listingTemplate(listingData) {
 	const listing = document.createElement("a");

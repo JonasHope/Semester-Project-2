@@ -1,4 +1,4 @@
-import displayCountdown from "../ui/countdown.mjs";
+import displayCountdown from "../ui/count-down.mjs";
 import { postBid } from "../api/listings/bid.mjs";
 
 export function specificListingTemplate(listingSpecific) {
