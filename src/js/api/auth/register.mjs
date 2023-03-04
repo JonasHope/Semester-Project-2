@@ -18,9 +18,12 @@ export async function register(profile) {
     const result = await response.json()
 
     if (response.ok) {
-        alert("You registered successfully!")
+        alert("You registered successfully! Click OK to login")
+        setTimeout(function() {
+        window.location.href = `../../pages/login`;
+        }, 1000);
     } else {
-        alert("The input values seems to be invalid, try again.")
+        alert("The input values seems to be invalid, Please try again..")
     }
 
     return(result)

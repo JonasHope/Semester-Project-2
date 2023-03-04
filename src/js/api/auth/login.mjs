@@ -23,6 +23,9 @@ export async function login(profile) {
 
     if (response.ok) {
         alert("You logged in successfully! Click OK to proceed")
+        setTimeout(function() {
+        window.location.href = `../../pages/listings`;
+        }, 1000);
     }   else {
         alert("Invalid email or password, try again.")
         };

@@ -7,7 +7,7 @@ const media = "/media"
 
 const method = "put";
 
-function userProfile() {
+export function userProfile() {
     try {
         const profileFetch = JSON.parse(localStorage.profile);
         const name = profileFetch.name;

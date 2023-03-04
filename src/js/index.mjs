@@ -12,19 +12,40 @@ import { createListingForm } from "./handlers/createListing.mjs";
 import { changeAvatarButton } from "./handlers/createListing.mjs";
 import { viewProfileImg } from "./handlers/profileImgNav.mjs";
 import { showCreditAmount } from "./handlers/displayCredits.mjs";
+import { navFix } from "./handlers/nav.mjs";
+import { closeLoader } from "./ui/loader.mjs";
 
 switch(location.pathname) {
     case "/":
     case "./":
     case "/index.html":
     case "./index.html":
+    case "/Semester-Project-2/index.html/":
+    case "/Semester-Project-2/./index.html":
     case "/Semester-Project-2/":
     case "/Semester-Project-2/./":
-    case "/Semester-Project-2/index.html":
-    case "/Semester-Project-2/./index.html":
-        regFormListener();
-        loginFormListener();
         viewProfileImg()
+        navFix()
+        break;
+    case "/pages/login/index.html":
+    case "./pages/login/index.html":
+    case "/pages/login/":
+    case "./pages/login/":
+    case "/Semester-Project-2/pages/login/":
+    case "/Semester-Project-2/./pages/login/":
+    case "/Semester-Project-2/pages/login/index.html":
+    case "/Semester-Project-2/./pages/login/index.html":
+        loginFormListener();
+        break;
+    case "/pages/register/index.html":
+    case "./pages/register/index.html":
+    case "/pages/register/":
+    case "./pages/register/":
+    case "/Semester-Project-2/pages/register/":
+    case "/Semester-Project-2/./pages/register/":
+    case "/Semester-Project-2/pages/register/index.html":
+    case "/Semester-Project-2/./pages/register/index.html":
+        regFormListener();
         break;
     case "/pages/listings/index.html":
     case "/pages/listings/":
@@ -37,6 +58,8 @@ switch(location.pathname) {
         viewAllListings();
         searchForListing();
         viewProfileImg()
+        navFix()
+        closeLoader()
         break;
     case "/pages/specific/index.html":
     case "/pages/specific/":
@@ -50,6 +73,7 @@ switch(location.pathname) {
         viewProfileListings();
         viewProfileImg()
         showCreditAmount()
+        navFix()
         break;
     case "/pages/profile/index.html":
     case "/pages/profile/":
@@ -66,4 +90,5 @@ switch(location.pathname) {
         createListingForm()
         changeAvatarButton()
         viewProfileImg()
+        navFix()
 }

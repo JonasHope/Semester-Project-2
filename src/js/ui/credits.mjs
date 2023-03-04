@@ -5,10 +5,14 @@ export function credits(profileData) {
         const creditContainer = document.createElement('div')
         const credits = document.querySelector('#bidHeader')
 
-        credits.innerText = 'Available credits:' + '£' + profileData.credits
+        credits.innerText = 'Available credits:' + ' ' + '£' + ' ' + profileData.credits
+
+        if (credits.innertext === undefined) {
+            credits.innerText = 'Login to bid on listing'
+        }
 
         return creditContainer
-    }, 1);
+    }, 3000);
 }
 
 export function showCredits(profileData, parent) {

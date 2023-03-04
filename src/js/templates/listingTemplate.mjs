@@ -42,7 +42,7 @@ export function specificListingTemplate(listingSpecific) {
 
     // Listing content
     textContent.classList.add( 'd-flex', 'flex-column','align-items-center' , 'align-items-md-start');
-    listingText.classList.add('d-flex', 'flex-column', 'col-12', 'col-md-8')
+    listingText.classList.add('d-flex', 'flex-column', 'col-12', 'col-md-6')
 
     title.innerText = listingSpecific.title;
     description.innerText = listingSpecific.description;
@@ -91,6 +91,8 @@ export function specificListingTemplate(listingSpecific) {
     bidForm.classList.add('d-flex', 'flex-column', 'input-width', 'flex-md-row')
     bidHeader.classList.add('h6', 'mx-2')
 
+    bidInput.setAttribute('id', 'bidInput')
+
     const bids = listingSpecific.bids;
 	const highestBid = Math.max(...bids.map((winningBid) => winningBid.amount));
 
@@ -104,7 +106,6 @@ export function specificListingTemplate(listingSpecific) {
     bidError.classList.add('text-red', 'px-3', 'hide')
 
     bidError.innerText = 'The bid has to be higher than' + ' ' + highestBid
-    
 
     bidInput.addEventListener('input', (e) => {
         e.preventDefault()

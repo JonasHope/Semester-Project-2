@@ -50,7 +50,7 @@ export function listingTemplate(listingData) {
 	const bids = listingData.bids;
 	const highestBid = Math.max(...bids.map((winningBid) => winningBid.amount));
 
-	bidAmount.innerHTML = '<small class="text-purple">Highest bid:</small>' + " " + '<img src="/src/icons/gem.svg">' + " " + highestBid;
+	bidAmount.innerHTML = '<small class="text-purple">Highest bid:</small>' + " " + '£' + " " + highestBid;
 	bidAmount.classList.add("text-center", "bg-light", "py-2", 'px-3', 'border-fix');
 
 	if (highestBid < 0) {

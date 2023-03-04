@@ -57,6 +57,26 @@ body {
     color: $secondary
 }
 
+.loading_icon {
+    border-radius: 50%;
+    border-top: 5px solid $primary;
+    border-right: 5px solid transparent;
+    box-sizing: border-box;
+    width: 100px;
+    height: 100px;
+    -webkit-animation: rotation 1s linear infinite;
+    animation: rotation 1s linear infinite;
+    margin: 50px auto;
+}
+
+@keyframes rotation {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { transform: rotate(360deg);
+  }
+}
+
 // -------- Header --------- //
 
 .logo {
@@ -77,6 +97,29 @@ nav {
     width: 50px;
     height: 50px;
     border-radius: 360px;
+    cursor: pointer;
+}
+
+.cool-hover {
+    background-image: linear-gradient($primary, $primary);
+    background-position-x: 50%;
+    background-position-y: 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s ease-in-out;
+    padding:5px;
+}
+
+.cool-hover {
+    background-size: 0% 0.1em;
+}
+
+.cool-hover:hover {
+    background-size: 90% 0.1em;
+}
+
+.logout {
+    padding-left: 10px;
+    border-left: 1px solid $secondary;
     cursor: pointer;
 }
 
@@ -123,7 +166,6 @@ nav {
 
 .listingCard:hover {
     background-color: $light-grey;
-    transform:scale(1.02);
     transition: ease-in-out;
     box-shadow: none;
     border-radius: 10px;
