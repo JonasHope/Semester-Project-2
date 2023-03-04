@@ -20,7 +20,7 @@ switch(location.pathname) {
     case "./":
     case "/index.html":
     case "./index.html":
-    case "/Semester-Project-2/index.html/":
+    case "/Semester-Project-2/index.html":
     case "/Semester-Project-2/./index.html":
     case "/Semester-Project-2/":
     case "/Semester-Project-2/./":
