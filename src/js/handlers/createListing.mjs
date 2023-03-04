@@ -1,9 +1,20 @@
 import { createListing } from "../api/listings/create.mjs";
 
-const button = document.querySelector('.create-listing')
+const CreateListingbutton = document.querySelector('.create-listing')
+const changeAvatar = document.querySelector('.change-avatar')
+
+
+export function changeAvatarButton() {
+    changeAvatar.onclick = function() {
+
+        const avatarform = document.querySelector('#changeAvatar');
+
+        avatarform.classList.toggle('hide')
+    }
+}
 
 export function viewForm() {
-    button.onclick = function() {
+    CreateListingbutton.onclick = function() {
 
         const form = document.querySelector('#target');
         const heading = document.querySelector('#listingsHeader')
@@ -23,6 +34,11 @@ export function createListingForm() {
             const listingData = Object.fromEntries(formData.entries())
 
             await createListing(listingData)
+
+            
+            setTimeout(function() {
+            location.reload();
+            }, 1);
         })
     }
 };

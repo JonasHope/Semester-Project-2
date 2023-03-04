@@ -12,7 +12,6 @@ export function listingTemplate(listingData) {
 
 	const listingInfo = document.createElement("div");
 	const title = document.createElement("h2");
-	const description = document.createElement("p");
 	const ends = document.createElement("small");
 
 	const creds = document.createElement("div");
@@ -28,28 +27,31 @@ export function listingTemplate(listingData) {
 
 	imageContainer.classList.add("d-flex", "justify-content-center");
 
-	imageContent.setAttribute("style", `background-image: url(${listingData.media[0]})`);
+	imageContent.setAttribute("style", `background-image: url(${listingData.media[0] 
+	?? "https://usercontent.one/wp/www.vocaleurope.eu/wp-content/uploads/no-image.jpg?media=1642546813"})`);
 	imageContent.setAttribute("alt", listingData.title);
 	imageContent.classList.add("listing-img");
 
 	listingContent.classList.add("px-3");
 
 	title.innerText = listingData.title;
-	title.classList.add("h5");
+	title.classList.add("h4", "mt-2");
 
-	description.innerText = listingData.description;
+	if (title.innerText.includes('test')) {
+		listing.classList.add('hide')
+	}
 
 	creds.classList.add("p-3");
 
 	author.innerText = `By: ${listingData.seller.name}`;
 
-	hr.classList.add("mt-0");
+	hr.classList.add("mt-0", "light-p");
 
 	const bids = listingData.bids;
 	const highestBid = Math.max(...bids.map((winningBid) => winningBid.amount));
 
 	bidAmount.innerHTML = '<small class="text-purple">Highest bid:</small>' + " " + '<img src="/src/icons/gem.svg">' + " " + highestBid;
-	bidAmount.classList.add("text-center", "bg-light", "p-2", 'border-fix');
+	bidAmount.classList.add("text-center", "bg-light", "py-2", 'px-3', 'border-fix');
 
 	if (highestBid < 0) {
 		bidAmount.innerHTML = '<small class="text-danger">No bids on listing</small>';
@@ -60,10 +62,9 @@ export function listingTemplate(listingData) {
 	listingContent.appendChild(imageContainer);
 
 	listingContent.appendChild(listingInfo);
-	listingInfo.appendChild(ends);
 	listingInfo.appendChild(title);
-	listingInfo.appendChild(description);
 
+	creds.appendChild(ends);
 	creds.appendChild(hr);
 	creds.appendChild(author);
 

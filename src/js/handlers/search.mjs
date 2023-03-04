@@ -20,6 +20,13 @@ export async function searchForListing() {
         console.clear();
 
         renderListingsTemplates(filteredListings, listingsContainer);
+
+        const noListings = document.querySelector('#noListings')
+        if (listingsContainer.firstChild) {
+            noListings.style.display = 'none'
+        } else {
+            noListings.style.display = 'block'
+        }
     })
     const listings = await methods.getListings();
 };

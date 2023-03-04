@@ -9,6 +9,9 @@ import { viewUserListings } from "./handlers/myProfileListings.mjs";
 import { updateAvatarURL } from "./handlers/changeAvatar.mjs";
 import { viewForm } from "./handlers/createListing.mjs";
 import { createListingForm } from "./handlers/createListing.mjs";
+import { changeAvatarButton } from "./handlers/createListing.mjs";
+import { viewProfileImg } from "./handlers/profileImgNav.mjs";
+import { showCreditAmount } from "./handlers/displayCredits.mjs";
 
 switch(location.pathname) {
     case "/":
@@ -21,6 +24,7 @@ switch(location.pathname) {
     case "/Semester-Project-2/./index.html":
         regFormListener();
         loginFormListener();
+        viewProfileImg()
         break;
     case "/pages/listings/index.html":
     case "/pages/listings/":
@@ -32,6 +36,7 @@ switch(location.pathname) {
     case "/Semester-Project-2/./pages/listings/":
         viewAllListings();
         searchForListing();
+        viewProfileImg()
         break;
     case "/pages/specific/index.html":
     case "/pages/specific/":
@@ -43,6 +48,8 @@ switch(location.pathname) {
     case "/Semester-Project-2/./pages/specific/":
         viewSpecificListing();
         viewProfileListings();
+        viewProfileImg()
+        showCreditAmount()
         break;
     case "/pages/profile/index.html":
     case "/pages/profile/":
@@ -57,4 +64,6 @@ switch(location.pathname) {
         updateAvatarURL();
         viewForm()
         createListingForm()
+        changeAvatarButton()
+        viewProfileImg()
 }

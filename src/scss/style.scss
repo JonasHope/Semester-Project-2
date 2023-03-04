@@ -54,6 +54,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    color: $secondary
 }
 
 // -------- Header --------- //
@@ -72,6 +73,13 @@ nav {
     color: $grey;
 }
 
+.nav-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 360px;
+    cursor: pointer;
+}
+
 // -------- Profile --------- //
 
 .profile-img {
@@ -81,6 +89,28 @@ nav {
 
 }
 
+.shadow {
+    box-shadow: 0px 0px 15px 0px $fade;
+}
+
+.input-fix {
+    border:none;
+    border-bottom: 2px solid $primary;
+    border-radius: 360px;
+    display:flex;
+    padding: 10px 35px;
+}
+
+.change-avatar {
+    border-bottom: 2px solid $primary;
+    cursor: pointer;
+    padding:5px 10px;
+}
+
+.change-avatar:hover {
+    border-radius: 360px;
+}
+
 // -------- Listings --------- //
 
 .listing {
@@ -88,7 +118,7 @@ nav {
     width: 300px;
     min-height: 500px;
     box-shadow: 5px 5px 10px 5px $light-grey;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px
 }
 
 .listingCard:hover {
@@ -103,6 +133,10 @@ nav {
     border-radius: 0px 0px 15px 0px;
 }
 
+.box-border {
+    border: 1px solid $light-purple;
+}
+
 .hide {
     display: none!important;
 }
@@ -111,24 +145,13 @@ nav {
     overflow: hidden;
 }
 
-.input-width {
-    width: 250px;
-    border-radius: 360px;
-}
-
 .bidder-card {
     min-width: 250px;
     border-radius: 360px;
-    background-color: lightgreen;
+    background-color: $fe;
     padding: 5px 20px;
     display: flex;
     justify-content: space-between;
-}
-
-.bids-container {
-    max-height: 200px;
-    overflow-y: scroll;
-    text-align: center;
 }
 
 .selector-img {
@@ -146,15 +169,42 @@ nav {
     background-position: center;
     min-width: 300px;
     min-height: 300px;
-    margin: 5px;
+}
+
+.avatarContainer {
+    width: 100px;
+    height:100px;
+    overflow:hidden;
+    border-radius: 360px;
+    position: relative;
+}
+
+.avatarImg {
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    width: 100%
+}
+
+.custom-card {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: $white;
+    box-shadow: 0px 0px 15px 0px $fade;
 }
 
 .mediaContainer {
-    max-width: 620px;
-    padding-bottom: 10px;
+    overflow-x: auto;
 }
 
-.listing-img:hover {
-    transform:scale(1.4);
-    transition: ease-in-out;
+::-webkit-scrollbar {
+    padding:10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: $purple;
+    border-radius: 360px;
 }

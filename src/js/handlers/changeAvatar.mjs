@@ -13,6 +13,10 @@ export async function updateAvatarURL() {
             const newAvatar = Object.fromEntries(formData.entries())
 
             await putNewAvatar(newAvatar)
+
+            setTimeout(function() {
+            location.reload();
+            }, 1);
         })
     }
 }

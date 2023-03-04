@@ -14,6 +14,26 @@
     color: $green;
 }
 
+.text-red {
+    color: red;
+}
+
+.light-p {
+    border: 1px solid $purple;
+}
+
 .bg-light {
     background-color: $light-grey!important;
+}
+
+.bg-green {
+    background-color: lightgreen!important;
+}
+
+.bg-light-p {
+    background-color: $light-purple!important;
+}
+
+.bg-red {
+    background-color: $red;
 }

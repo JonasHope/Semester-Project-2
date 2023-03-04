@@ -21,12 +21,11 @@
             </div>
             <nav>
                 <ul class="d-flex align-items-center m-0 p-0">
-                    <li class="ms-4"><a class="nav-link" href="../../index.html" aria-current="page">Home</a></li>
-                    <li class="ms-4"><a class="nav-link" href="../listings/index.html" aria-current="page">Listings</a></li>
-                    <li class="ms-4"><a href="../profile/index.html">
-                        <img class="nav-link icon-size" src="../../src/icons/person-circle.svg" aria-current="page">
+                    <li class="mx-2"><a class="nav-link" href="../listings/index.html" aria-current="page">Listings</a></li>
+                    <li><a href="../profile/index.html"><img id="navImg" class="mx-2 nav-img" alt="profle page">
+                        <div id="imgCont"></div>
                     </a></li>
-                    <li class="ms-4"><button class="btn btn-secondary">Logout</button></li>
+                    <li class="mx-2 text-danger">Logout</li>
                 </ul>
             </nav>
         </div>
@@ -36,10 +35,11 @@
             <div class="width mx-auto py-3 py-lg-5 d-flex flex-column flex-lg-row align-items-center justify-content-center ">
                 <div class="d-flex flex-column align-items-center">
                     <img id="profile-img" class="profile-img">
-                        <form id="changeAvatar" class="d-flex flex-column mt-2">
-                            <input class="form-control" type="text" name="avatar" placeholder="Write URL here..">
-                            <button type="submit" class="btn btn-primary mt-2">Change avatar</button>
-                        </form>
+                    <p type="button" class="change-avatar my-2">Change avatar</p>
+                    <form id="changeAvatar" class="d-flex flex-column mt-2 hide">
+                        <input class="input-fix" type="text" name="avatar" placeholder="Write URL here..">
+                        <button type="submit" class="btn btn-primary mt-2">Change avatar</button>
+                    </form>
                 </div>
                 <div class="ms-lg-5 mt-4 ">
                     <h1 id="name" class="pb-3"></h1>
@@ -67,39 +67,37 @@
                 <h2 id="listingsHeader" class="text-primary h3">My Active Listings</h2>
             </div>
             <div class="d-flex justify-content-lg-end justify-content-center">
-                <a href="#target" class="btn btn-primary d-flex align-items-center create-listing">Create Listing</a>
+                <a href="#createListingButton" id="createListingButton" class="btn btn-primary d-flex align-items-center create-listing">Create Listing</a>
             </div>
         </div>
-            <form id="target" class="col-lg-6 col-sm-8 col-10 mx-auto my-2 p-5 border hide">
-                <h3>Create a listing</h3>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1">Title</span>
-                    <input type="text" name="title" class="form-control" placeholder="Name of listing" aria-label="title" aria-describedby="basic-addon1" required>
+            <form id="target" class="col-lg-6 col-sm-8 col-10 mx-auto rounded-2 my-2 bg-light shadow p-5 hide">
+                <h3 class="mb-3">Create a listing</h3>
+                <div class="mb-3">
+                    <span class="h6" id="basic-addon1">Title</span>
+                    <input type="text" name="title" class="input-fix w-100" aria-label="title" aria-describedby="basic-addon1" required>
                 </div>
 
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon2">Description</span>
-                    <textarea type="text" name="description" class="form-control" placeholder="Description of the listing" aria-label="With textarea" aria-describedby="basic-addon2"></textarea>
+                <div class="mb-3">
+                    <span class="h6" id="basic-addon2">Description</span>
+                    <textarea type="text" name="description" class="input-fix w-100" rows="3" aria-label="With textarea" aria-describedby="basic-addon2"></textarea>
                 </div>
 
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon3">Tags</span>
-                    <input type="text" name="tags" class="form-control" id="basic-url" placeholder="tag1, tag2, tag3" aria-describedby="basic-addon3">
+                <div class="mb-3">
+                    <span class="h6" id="basic-addon3">Tags</span>
+                    <input type="text" name="tags" class="input-fix w-100" id="basic-url" placeholder="tag1, tag2, tag3" aria-describedby="basic-addon3">
                 </div>
 
-                <label for="basic-url" class="form-label">Images</label>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon3">URL</span>
-                    <input type="text" name="media" class="form-control" id="basic-url" placeholder="https://example-1.com/, https://example-2.com/" aria-describedby="basic-addon3">
+                <div class="mb-3">
+                    <span class="h6" id="basic-addon3">Image URL</span>
+                    <input type="text" name="media" class="input-fix w-100" id="basic-url" placeholder="https://example-1.com/, https://example-2.com/" aria-describedby="basic-addon3">
                 </div>
 
-                <label for="date-picker" class="form-label">Duration</label>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon3">Ending date</span>
-                    <input type="datetime-local" name="endsAt" class="form-control" id="date-picker" aria-describedby="basic-addon3" required>
+                <div class=" mb-3">
+                    <span class="h6" id="basic-addon3">Ending date</span>
+                    <input type="datetime-local" name="endsAt" class="input-fix w-100" id="date-picker" aria-describedby="basic-addon3" required>
                 </div>
 
-                <button type="submit" class="btn btn-primary px-4 py-2">Submit</button>
+                <button type="submit" class="btn btn-success px-4 py-2">List it</button>
             </form>
         <hr class="width mx-auto">
         <div id="profile-listings" class="listings width m-auto d-flex flex-wrap justify-content-center justify-content-lg-between">
@@ -107,6 +105,7 @@
         </div>
     </main>
     <footer class="py-3 mt-5 text-center bg-light">Jonas Hope copyright 2023</footer>
-    <script src="/Semester-Project-2/src/js/index.mjs" type="module"></script>
+    <!-- <script src="/Semester-Project-2/src/js/index.mjs" type="module"></script> -->
+    <script src="../../src/js/index.mjs" type="module"></script>
 </body>
 </html>

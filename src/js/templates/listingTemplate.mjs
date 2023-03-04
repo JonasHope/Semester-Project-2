@@ -6,6 +6,7 @@ export function specificListingTemplate(listingSpecific) {
     const listingContainer = document.createElement('div')
 
     const textContent = document.createElement('div');
+    const listingText = document.createElement('div');
     const ends = document.createElement('strong');
     const title = document.createElement('h1');
     const description = document.createElement('p');
@@ -19,8 +20,6 @@ export function specificListingTemplate(listingSpecific) {
     const imgContainer = document.createElement('div');
     const avatar = document.createElement('img');
 
-    const svg = document.createElement('div');
-
     const bidContainer = document.createElement('div');
     const layer = document.createElement('div');
 
@@ -31,29 +30,29 @@ export function specificListingTemplate(listingSpecific) {
     const bidForm = document.createElement('form');
     const bidInput = document.createElement('input');
     const bidButton = document.createElement('button')
+    const bidError = document.createElement('span')
 
     const currentBidsContainer = document.createElement('div');
     const allBids = document.createElement('strong')
 
-    const moreListings = document.createElement('div');
-    const moreHr = document.createElement('hr');
-    const moreHeader = document.createElement('h3');
+    specificListing.classList.add('width', 'mx-auto', 'd-flex', 'justify-content-center', 'flex-column')
     
     // Listing container
-    listingContainer.classList.add('bg-white', 'width', 'mx-auto', 'd-flex', 'flex-column', 'flex-sm-row-reverse', 'space-between');
+    listingContainer.classList.add('d-flex', 'flex-column-reverse');
 
     // Listing content
-    textContent.classList.add('col-12', 'col-sm-8', 'd-flex', 'flex-column', 'mx-auto', 'align-items-center', 'align-items-sm-start');
+    textContent.classList.add( 'd-flex', 'flex-column','align-items-center' , 'align-items-md-start');
+    listingText.classList.add('d-flex', 'flex-column', 'col-12', 'col-md-8')
 
     title.innerText = listingSpecific.title;
     description.innerText = listingSpecific.description;
-    tags.innerText = 'Tags: ' + listingSpecific.tags;
+    tags.innerText = listingSpecific.tags;
     displayCountdown(listingSpecific, ends, specificListing);
 
-    hr.classList.add('w-75')
-    description.classList.add('description-width','mt-2', 'w-75')
-
-    mediaContainer.classList.add('d-flex', 'flex-wrap', 'justify-content-center', 'justify-content-sm-start', 'mediaContainer')
+    tags.classList.add('mb-2', 'text-purple')
+    hr.classList.add('w-100', 'light-p')
+    description.classList.add('mt-2')
+    mediaContainer.classList.add('d-flex', 'mediaContainer', 'col-12', 'col-md-8')
 
     const fetchMedia = listingSpecific.media;
 
@@ -62,56 +61,65 @@ export function specificListingTemplate(listingSpecific) {
         const mediaImg = document.createElement('div')
 
         mediaImg.setAttribute('style', `background-image: url(${listingImages})`)
-        mediaImg.classList.add('listing-img')
+        mediaImg.classList.add('listing-img', 'm-1')
 
         mediaItem.appendChild(mediaImg);
         mediaContainer.appendChild(mediaItem);
     })
 
     // Seller Content
-    textSeller.classList.add('col-12', 'col-sm-4', 'd-flex', 'flex-sm-column', 'justify-content-center','justify-content-sm-start', 'mb-4', 'mb-sm-0', 'mx-auto')
-    name.innerHTML = 
-        `
-        <div class="d-flex flex-sm-column">
-            <p class="me-2 my-0">Listing creator:</p>
-            <strong class="text-purple m-0">${listingSpecific.seller.name}</strong>
-        </div>
-        `
-    imgContainer.classList.add('d-none','d-sm-block', 'col-sm-4');
+    name.innerText = listingSpecific.seller.name
+
+    textSeller.classList.add('d-flex', 'mb-5', 'mt-3', 'align-items-center')
+    name.classList.add('text-purple', 'fw-bold', 'mx-2')
+    imgContainer.classList.add('col-1', 'avatarContainer');
+    avatar.classList.add('avatarImg',);
+
     avatar.setAttribute('src', listingSpecific.seller.avatar);
+    avatar.setAttribute('alt', listingSpecific.seller.name);
+
     const defaultImg = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     const imgSrc = listingSpecific.seller.avatar
     imgSrc
     ? avatar.src = imgSrc
     : avatar.src = defaultImg
-    avatar.setAttribute('alt', listingSpecific.seller.name);
-    avatar.classList.add('w-100', 'rounded-4');
-
-    // SVG
-    svg.classList.add('bg-white');
-    svg.innerHTML = 
-        `
-        <svg viewBox="0 0 500 50" preserveAspectRatio="xMinYMin meet">
-            <path class="layer-fill" d="M0, 30 C200, -10 350, 70 500, 30 L500, 00 L0, 0 Z"></path>
-        </svg>
-        `;
 
     // Bidding content
-    bidContainer.classList.add('width', 'mx-auto', 'd-flex', 'pt-4', 'flex-column', 'flex-lg-row', 'align-items-center', 'justify-content-lg-between');
-    bidInputContainer.classList.add('d-flex', 'align-items-center', 'align-items-sm-start', 'flex-column');
+    bidContainer.classList.add('mt-5', 'd-flex','flex-column');
+    bidInput.classList.add('input-fix', 'input-width');
+    bidButton.classList.add('btn', 'btn-primary', 'px-5', 'ms-md-2', 'mt-2', 'mt-md-0');
+    bidForm.classList.add('d-flex', 'flex-column', 'input-width', 'flex-md-row')
+    bidHeader.classList.add('h6', 'mx-2')
 
-    bidContent.classList.add('d-flex', 'flex-column', 'align-items-center', 'align-items-sm-start');
-    bidInput.classList.add('form-control', 'input-width');
-    bidButton.classList.add('btn', 'btn-primary', 'px-5', 'mt-2');
-    bidForm.classList.add('d-flex', 'flex-column')
-    bidHeader.classList.add('p-1')
+    const bids = listingSpecific.bids;
+	const highestBid = Math.max(...bids.map((winningBid) => winningBid.amount));
 
     bidInput.setAttribute('name', 'amount')
-    bidInput.setAttribute('placeholder', 'Enter a bid')
+    bidInput.setAttribute('value', `${highestBid + 1}`)
+    bidInput.setAttribute('placeholder', 'Enter bid here..')
     bidInput.setAttribute('type', 'number')
     bidInput.setAttribute('required','')
 
-    bidHeader.innerText = 'Place a bid'
+    bidInput.classList.add('bg-light-p')
+    bidError.classList.add('text-red', 'px-3', 'hide')
+
+    bidError.innerText = 'The bid has to be higher than' + ' ' + highestBid
+    
+
+    bidInput.addEventListener('input', (e) => {
+        e.preventDefault()
+        if (bidInput.value <= highestBid) {
+            bidInput.classList.remove('bg-light-p')
+            bidInput.classList.add('bg-red')
+            bidError.classList.remove('hide')
+        } else { 
+            bidInput.classList.remove('bg-red')
+            bidInput.classList.add('bg-light-p')
+            bidError.classList.add('hide')
+        }
+    })
+
+    bidHeader.setAttribute('id', 'bidHeader')
     bidButton.innerText = 'Bid'
 
     if (bidForm) {
@@ -126,7 +134,7 @@ export function specificListingTemplate(listingSpecific) {
             await postBid(bid);
 
             setTimeout(function() {
-            window.location.href = `/pages/specific/?id=${listingSpecific.id}&name=${listingSpecific.seller.name}`
+            location.reload();
             }, 1);
         })
     }
@@ -134,12 +142,11 @@ export function specificListingTemplate(listingSpecific) {
     currentBidsContainer.appendChild(allBids);
     
     // Fetching bids
-	const bids = listingSpecific.bids;
+    
     bids.sort((a,b) => {
         return (b.amount - a.amount)
     })
     bids.map((fetchBids) => {
-    
         const bidsContent = document.createElement('div');
         const bidderName = document.createElement('strong');
         const bidAmount = document.createElement('strong');
@@ -147,9 +154,15 @@ export function specificListingTemplate(listingSpecific) {
         allBids.innerText = 'Current bids'
         bidderName.innerText = fetchBids.bidderName;
         const bidNumber = fetchBids.amount;
-        bidAmount.innerHTML =  '<strong>bid:</strong>' + " " + bidNumber + " " + '<img src="/src/icons/gem.svg">'
+        bidAmount.innerHTML =  '<strong>£</strong>' + " " + bidNumber
 
-        bidsContent.classList.add('bidder-card', 'mt-2', 'mx-2')
+        const winner = Math.max(...bids.map((winningBid) => winningBid.amount));
+
+        if (bidNumber === winner) {
+            bidsContent.classList.add('bg-green')
+        }
+
+        bidsContent.classList.add('bidder-card', 'mt-2')
         allBids.classList.add('h4')
         
         currentBidsContainer.appendChild(allBidsContainer)
@@ -159,38 +172,33 @@ export function specificListingTemplate(listingSpecific) {
     })
 
     layer.classList.add('bg-light')
-    allBidsContainer.classList.add('d-flex', 'flex-wrap', 'justify-content-center')
-    currentBidsContainer.classList.add('mt-5', 'mt-lg-0', 'bids-container')
+    allBidsContainer.classList.add('d-flex', 'flex-column', 'col-12', 'col-md-6')
+    currentBidsContainer.classList.add('mt-5')
 
-    // More listings by <name> section.
-
-    moreListings.classList.add('width', 'mx-auto')
-    moreHeader.classList.add('h5', 'text-secondary')
-    moreHeader.innerText = `More listings from ${listingSpecific.seller.name}`
+    // More listings by <name> section.listing
+    const moreListingsTitle = document.querySelector('#moreListingsTitle');
+    moreListingsTitle.innerHTML = `All listings from ${listingSpecific.seller.name}`;
 
     // Appends >>
 	
+    specificListing.appendChild(listingContainer);
     specificListing.appendChild(layer);
     specificListing.appendChild(bidContainer);
-    specificListing.appendChild(svg);
-    specificListing.appendChild(listingContainer);
-    specificListing.appendChild(moreListings);
-
-    moreListings.appendChild(moreHr);
-    moreListings.appendChild(moreHeader);
 
     listingContainer.appendChild(textContent);
     listingContainer.appendChild(textSeller);
 
-    textContent.appendChild(title);
-    textContent.appendChild(ends);
-    textContent.appendChild(description);
-    textContent.appendChild(hr);
-    textContent.appendChild(tags);
+    textContent.appendChild(listingText)
     textContent.appendChild(mediaContainer)
 
-    textSeller.appendChild(name);
+    listingText.appendChild(title);
+    listingText.appendChild(ends);
+    listingText.appendChild(hr);
+    listingText.appendChild(description);
+    listingText.appendChild(tags)
+
     textSeller.appendChild(imgContainer);
+    textSeller.appendChild(name);
     textSeller.appendChild(email);
 
     imgContainer.appendChild(avatar);
@@ -206,11 +214,11 @@ export function specificListingTemplate(listingSpecific) {
     bidContent.appendChild(bidForm);
 
     bidForm.appendChild(bidInput);
+    bidContent.appendChild(bidError)
     bidForm.appendChild(bidButton);
 
     return specificListing
 }
-
 
 export function renderSpecificListingTemplate(listingSpecific, parent) {
     parent.append(specificListingTemplate(listingSpecific))
