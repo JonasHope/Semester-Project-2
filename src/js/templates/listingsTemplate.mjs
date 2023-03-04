@@ -19,7 +19,7 @@ export function listingTemplate(listingData) {
 	const hr = document.createElement("hr");
 	const bidAmount = document.createElement("strong");
 
-	listing.setAttribute("href", `/pages/specific/?id=${listingData.id}&name=${listingData.seller.name}`);
+	listing.setAttribute("href", `Semester-Project-2/pages/specific/?id=${listingData.id}&name=${listingData.seller.name}`);
 	listing.setAttribute("id", listingData.id);
 	listing.classList.add("mb-5", "listingCard", "d-flex", "flex-column", "align-items-center", "text-decoration-none", "text-primary");
 
