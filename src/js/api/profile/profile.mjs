@@ -4,6 +4,7 @@ import { API_SOCIAL_URL } from "../const.mjs";
 const action = "/profiles/";
 const listings = "/listings/";
 const media = "/media"
+const bid = "/bids"
 
 const method = "put";
 
@@ -46,6 +47,15 @@ export async function putNewAvatar(newAvatar) {
         method: method,
         body: JSON.stringify(newAvatar)
     })
+
+    return await response.json()
+}
+
+export async function getProfileBiddingHistory() {
+
+    const biddingHistoryURL = `${API_SOCIAL_URL}${action}${namey}${bid}?_listings=true`;
+
+    const response = await authFetch(biddingHistoryURL)
 
     return await response.json()
 }

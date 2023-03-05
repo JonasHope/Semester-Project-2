@@ -57,6 +57,10 @@ body {
     color: $secondary
 }
 
+main {
+    min-height: 100rem
+}
+
 .loading_icon {
     border-radius: 50%;
     border-top: 5px solid $primary;
@@ -152,6 +156,22 @@ nav {
 
 .change-avatar:hover {
     border-radius: 360px;
+}
+
+.bidHistoryElements:nth-child(odd) {
+    background-color: $light-grey;
+}
+
+.bidHistoryElements:nth-child(even) {
+    background-color: $white;
+}
+
+.bidHistoryElements:nth-child(odd):hover {
+    background-color: $light-purple;
+}
+
+.bidHistoryElements:nth-child(even):hover {
+    background-color: $light-purple;
 }
 
 // -------- Listings --------- //

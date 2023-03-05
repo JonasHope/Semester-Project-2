@@ -14,6 +14,7 @@ import { viewProfileImg } from "./handlers/profileImgNav.mjs";
 import { showCreditAmount } from "./handlers/displayCredits.mjs";
 import { navFix } from "./handlers/nav.mjs";
 import { closeLoader } from "./ui/loader.mjs";
+import { viewBiddingHistory } from "./handlers/biddingHistory.mjs";
 
 switch(location.pathname) {
     case "/":
@@ -91,4 +92,5 @@ switch(location.pathname) {
         changeAvatarButton()
         viewProfileImg()
         navFix()
+        viewBiddingHistory()
 }

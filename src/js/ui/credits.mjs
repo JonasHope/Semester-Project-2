@@ -7,7 +7,7 @@ export function credits(profileData) {
 
         credits.innerText = 'Available credits:' + ' ' + '£' + ' ' + profileData.credits
 
-        if (credits.innertext === undefined) {
+        if (profileData.credits === undefined) {
             credits.innerText = 'Login to bid on listing'
         }
 

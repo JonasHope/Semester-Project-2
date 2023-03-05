@@ -10,7 +10,7 @@
 </head>
 <body>
     <header class="shadow-sm">
-        <div class="width d-flex align-items-center justify-content-between m-auto">
+        <div class="width d-flex flex-column flex-sm-row align-items-center justify-content-between m-auto">
             <div class="logo">
                 <a class="nav-link" aria-current="page" href="./index.html">
                     <div class="d-flex fs-2 py-2">
@@ -51,9 +51,40 @@
         <svg viewBox="0 0 500 60" preserveAspectRatio="xMinYMin meet">
             <path class="layer-fill" d="M0, 30 C200, -30 350, 100 500, 30 L500, 00 L0, 0 Z"></path>
         </svg>
+        <div class="d-flex width mx-auto justify-content-between mb-5">
+            <div class="col-3">
+                <img class="profile-img" src="./images/id.gif">
+                <h2 class="text-purple mb-3">Login</h2>
+                <p>
+                    <b>If you haven't already, head to the <a href="./pages/login/">login section</a> and join the action!</b>
+                    <a href="./pages/register/">Dont have an account yet?</a> dont worry,
+                    creating an account is super easy, simply fill in ur name, email and password on the register page
+                    and your good to go!
+                </p>
+            </div>
+            <div class="col-3">
+                <img class="profile-img" src="./images/award.gif">
+                <h2 class="text-purple">Bid on listings</h2>
+                <b>You have to be <a href="./pages/login/">logged in</a> to bid on listings.
+                When you <a href="./pages/register/">create an account</a> you automatically get 1000 credits, spend them wisely!</b>
+                Simply scroll trough or search for the listing you want, click on it to view that specific listing and place ur bid!
+                you can view prior or new bids listed on the listing specific page.
+                
+            </div>
+            <div class="col-3">
+                <img class="profile-img" src="./images/money-bag.gif">
+                <h2 class="text-purple">Create a listing</h2>
+                <p>
+                    <b>Create listings to grow your credit count!
+                    You have to be <a href="./pages/login/">logged in</a> to create a listing.</b>
+                    Enter your profile page, and click the button "create a listing", fill out the form and send in ur new listing!
+                    Keep the description short and simple, add as many images as you want.
+                </p>
+            </div>
+        </div>
     </main>
     <footer class="py-3 mt-5 text-center bg-light">Jonas Hope copyright 2023</footer>
-    <script src="/Semester-Project-2/src/js/index.mjs" type="module"></script>
-    <!-- <script src="/src/js/index.mjs" type="module"></script> -->
+    <!-- <script src="/Semester-Project-2/src/js/index.mjs" type="module"></script> -->
+    <script src="/src/js/index.mjs" type="module"></script>
 </body>
 </html>

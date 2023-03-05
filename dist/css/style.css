@@ -10918,6 +10918,10 @@ body {
   color: #0D1329;
 }
 
+main {
+  min-height: 100rem;
+}
+
 .loading_icon {
   border-radius: 50%;
   border-top: 5px solid #42218A;
@@ -11008,6 +11012,22 @@ nav {
 
 .change-avatar:hover {
   border-radius: 360px;
+}
+
+.bidHistoryElements:nth-child(odd) {
+  background-color: #EFF3F6;
+}
+
+.bidHistoryElements:nth-child(even) {
+  background-color: #FFFFFF;
+}
+
+.bidHistoryElements:nth-child(odd):hover {
+  background-color: #dccae4;
+}
+
+.bidHistoryElements:nth-child(even):hover {
+  background-color: #dccae4;
 }
 
 .listing {
