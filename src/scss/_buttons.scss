@@ -1,41 +1,41 @@
 .btn-secondary {
-    background-color: $dark-grey;
-    border: none;
-    color: $fe
+  background-color: $dark-grey;
+  border: none;
+  color: $fe;
 }
 
 .btn-secondary:hover {
-    background-color: $dark-grey!important;
+  background-color: $dark-grey !important;
 }
 
 .btn-success {
-    border: none;
+  border: none;
 }
 
 .btn-primary {
-    background-color: transparent;
-    color: $secondary;
-    letter-spacing: 1.1px;
-    font-weight: 700;
-    border: 2px solid $primary
+  background-color: transparent;
+  color: $secondary;
+  letter-spacing: 1.1px;
+  font-weight: 700;
+  border: 2px solid $primary;
 }
 
 .btn-primary:hover {
-    background-color: $primary;
+  background-color: $primary;
 }
 
 .btn {
-    border-radius: 360px;
+  border-radius: 360px;
 }
 
 .btn-listing {
-    width:250px;
-    background-color: $primary;
-    border-radius: 10px;
-    color: $fe
+  width: 250px;
+  background-color: $primary;
+  border-radius: 10px;
+  color: $fe;
 }
 
 .btn-listing:hover {
-    background-color: $purple;
-    color: $fe;
+  background-color: $purple;
+  color: $fe;
 }

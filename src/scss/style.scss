@@ -19,254 +19,254 @@
 // -------- Global --------- //
 
 .width {
-    max-width: 1220px;
-    padding: 5px 20px;
+  max-width: 1220px;
+  padding: 5px 20px;
 }
 
 .layer {
-    background-color: $light-grey;
+  background-color: $light-grey;
 }
 
 .layer-fill {
-    fill: $light-grey;
+  fill: $light-grey;
 }
 
 .modal-bg {
-    background-color: $fade;
+  background-color: $fade;
 }
 
 svg {
-    z-index: -1;
+  z-index: -1;
 }
 
 li {
-    list-style: none;
-    margin: 5px 0px;
+  list-style: none;
+  margin: 5px 0px;
 }
 
 .icon-size {
-    width: 20px;
+  width: 20px;
 }
 
 body {
-    margin:0px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    color: $secondary
+  margin: 0px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: $secondary;
 }
 
 main {
-    min-height: 100rem
+  min-height: 100rem;
 }
 
 .loading_icon {
-    border-radius: 50%;
-    border-top: 5px solid $primary;
-    border-right: 5px solid transparent;
-    box-sizing: border-box;
-    width: 100px;
-    height: 100px;
-    -webkit-animation: rotation 1s linear infinite;
-    animation: rotation 1s linear infinite;
-    margin: 50px auto;
+  border-radius: 50%;
+  border-top: 5px solid $primary;
+  border-right: 5px solid transparent;
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+  -webkit-animation: rotation 1s linear infinite;
+  animation: rotation 1s linear infinite;
+  margin: 50px auto;
 }
 
 @keyframes rotation {
-  0% { 
-    transform: rotate(0deg); 
+  0% {
+    transform: rotate(0deg);
   }
-  100% { transform: rotate(360deg);
+  100% {
+    transform: rotate(360deg);
   }
 }
 
 // -------- Header --------- //
 
 .logo {
-    font-weight: bold;
-    color: $purple;
+  font-weight: bold;
+  color: $purple;
 }
 
 .logo-img {
-    width: 40px;
-    height: 50px;
+  width: 40px;
+  height: 50px;
 }
 
 nav {
-    color: $grey;
+  color: $grey;
 }
 
 .nav-img {
-    width: 50px;
-    height: 50px;
-    border-radius: 360px;
-    cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 360px;
+  cursor: pointer;
 }
 
 .cool-hover {
-    background-image: linear-gradient($primary, $primary);
-    background-position-x: 50%;
-    background-position-y: 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.3s ease-in-out;
-    padding:5px;
+  background-image: linear-gradient($primary, $primary);
+  background-position-x: 50%;
+  background-position-y: 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease-in-out;
+  padding: 5px;
 }
 
 .cool-hover {
-    background-size: 0% 0.1em;
+  background-size: 0% 0.1em;
 }
 
 .cool-hover:hover {
-    background-size: 90% 0.1em;
+  background-size: 90% 0.1em;
 }
 
 .logout {
-    padding-left: 10px;
-    border-left: 1px solid $secondary;
-    cursor: pointer;
+  padding-left: 10px;
+  border-left: 1px solid $secondary;
+  cursor: pointer;
 }
 
 // -------- Profile --------- //
 
 .profile-img {
-    max-width: 250px;
-    max-height: 250px;
-    border-radius: 10px;
-
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 10px;
 }
 
 .shadow {
-    box-shadow: 0px 0px 15px 0px $fade;
+  box-shadow: 0px 0px 15px 0px $fade;
 }
 
 .input-fix {
-    border:none;
-    border-bottom: 2px solid $primary;
-    border-radius: 360px;
-    display:flex;
-    padding: 10px 35px;
+  border: none;
+  border-bottom: 2px solid $primary;
+  border-radius: 360px;
+  display: flex;
+  padding: 10px 35px;
 }
 
 .change-avatar {
-    border-bottom: 2px solid $primary;
-    cursor: pointer;
-    padding:5px 10px;
+  border-bottom: 2px solid $primary;
+  cursor: pointer;
+  padding: 5px 10px;
 }
 
 .change-avatar:hover {
-    border-radius: 360px;
+  border-radius: 360px;
 }
 
 .bidHistoryElements:nth-child(odd) {
-    background-color: $light-grey;
+  background-color: $light-grey;
 }
 
 .bidHistoryElements:nth-child(even) {
-    background-color: $white;
+  background-color: $white;
 }
 
 .bidHistoryElements:nth-child(odd):hover {
-    background-color: $light-purple;
+  background-color: $light-purple;
 }
 
 .bidHistoryElements:nth-child(even):hover {
-    background-color: $light-purple;
+  background-color: $light-purple;
 }
 
 // -------- Listings --------- //
 
 .listing {
-    overflow: hidden;
-    width: 300px;
-    min-height: 500px;
-    box-shadow: 5px 5px 10px 5px $light-grey;
-    border-radius: 0px 0px 10px 10px
+  overflow: hidden;
+  width: 300px;
+  min-height: 500px;
+  box-shadow: 5px 5px 10px 5px $light-grey;
+  border-radius: 0px 0px 10px 10px;
 }
 
 .listingCard:hover {
-    background-color: $light-grey;
-    transition: ease-in-out;
-    box-shadow: none;
-    border-radius: 10px;
+  background-color: $light-grey;
+  transition: ease-in-out;
+  box-shadow: none;
+  border-radius: 10px;
 }
 
 .border-fix {
-    border-radius: 0px 0px 15px 0px;
+  border-radius: 0px 0px 15px 0px;
 }
 
 .box-border {
-    border: 1px solid $light-purple;
+  border: 1px solid $light-purple;
 }
 
 .hide {
-    display: none!important;
+  display: none !important;
 }
 
 .description-width {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .bidder-card {
-    min-width: 250px;
-    border-radius: 360px;
-    background-color: $fe;
-    padding: 5px 20px;
-    display: flex;
-    justify-content: space-between;
+  min-width: 250px;
+  border-radius: 360px;
+  background-color: $fe;
+  padding: 5px 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .selector-img {
-    background-size: cover;
-    background-position: center;
-    width: 50px;
-    height: 50px;
-    overflow:hidden;
-    margin: 5px 5px;
-    cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  margin: 5px 5px;
+  cursor: pointer;
 }
 
 .listing-img {
-    background-size: cover;
-    background-position: center;
-    min-width: 300px;
-    min-height: 300px;
+  background-size: cover;
+  background-position: center;
+  min-width: 300px;
+  min-height: 300px;
 }
 
 .avatarContainer {
-    width: 100px;
-    height:100px;
-    overflow:hidden;
-    border-radius: 360px;
-    position: relative;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 360px;
+  position: relative;
 }
 
 .avatarImg {
-    position: absolute;
-    top: -9999px;
-    bottom: -9999px;
-    left: -9999px;
-    right: -9999px;
-    margin: auto;
-    width: 100%
+  position: absolute;
+  top: -9999px;
+  bottom: -9999px;
+  left: -9999px;
+  right: -9999px;
+  margin: auto;
+  width: 100%;
 }
 
 .custom-card {
-    padding: 20px;
-    border-radius: 10px;
-    background-color: $white;
-    box-shadow: 0px 0px 15px 0px $fade;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: $white;
+  box-shadow: 0px 0px 15px 0px $fade;
 }
 
 .mediaContainer {
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 ::-webkit-scrollbar {
-    padding:10px;
+  padding: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: $purple;
-    border-radius: 360px;
+  background-color: $purple;
+  border-radius: 360px;
 }

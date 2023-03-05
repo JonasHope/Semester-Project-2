@@ -1,49 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://use.typekit.net/eog4cop.css">
-    <link rel="stylesheet" href="../../dist/css/style.css">
-    <title>Home page</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/eog4cop.css" />
+    <link rel="stylesheet" href="../../dist/css/style.css" />
+    <title>Specific Listing</title>
+  </head>
+  <body>
     <header class="shadow-sm">
-        <div class="width d-flex flex-column flex-sm-row align-items-center justify-content-between m-auto">
-            <div class="logo">
-                <a class="nav-link" aria-current="page" href="/">
-                    <div class="d-flex fs-2 py-2">
-                        <p class="m-0">Voom</p>
-                        <p class="m-0 text-secondary">Auction</p>
-                    </div>
-                </a>
+      <div
+        class="width d-flex flex-column flex-sm-row align-items-center justify-content-between m-auto"
+      >
+        <div class="logo">
+          <a class="nav-link" aria-current="page" href="/">
+            <div class="d-flex fs-2 py-2">
+              <p class="m-0">Voom</p>
+              <p class="m-0 text-secondary">Auction</p>
             </div>
-            <nav>
-                <ul class="d-flex align-items-center m-0 p-0">
-                    <li id="navListing" class="mx-2"><a class="cool-hover nav-link" href="../listings/" aria-current="page">Listings</a></li>
-                    <li id="navProfile"><a href="../profile/"><img id="navImg" class="mx-2 nav-img" alt="profle page">
-                        <div id="imgCont"></div>
-                    </a></li>
-                    <li id="navLogout" class="nav-link logout mx-2 text-danger">Logout</li>
-                    <li id="navLogin"><a href="../login/" class="btn btn-primary">Login</a></li>
-                </ul>
-            </nav>
+          </a>
         </div>
+        <nav>
+          <ul class="d-flex align-items-center m-0 p-0">
+            <li id="navListing" class="mx-2">
+              <a
+                class="cool-hover nav-link"
+                href="../listings/"
+                aria-current="page"
+                >Listings</a
+              >
+            </li>
+            <li id="navProfile">
+              <a href="../profile/"
+                ><img id="navImg" class="mx-2 nav-img" alt="profle page" />
+                <div id="imgCont"></div>
+              </a>
+            </li>
+            <li id="navLogout" class="nav-link logout mx-2 text-danger">
+              Logout
+            </li>
+            <li id="navLogin">
+              <a href="../login/" class="btn btn-primary">Login</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
-        <div id="specificListing" class="bg-light"></div>
-        <svg viewBox="0 0 500 50" preserveAspectRatio="xMinYMin meet">
-            <path class="layer-fill" d="M0, 30 C200, -10 350, 70 500, 30 L500, 00 L0, 0 Z"></path>
-        </svg>
-        <div class="loading_icon"></div>
-        <div class="width mx-auto">
-            <h4 id="moreListingsTitle" class="ps-2 mb-5"></h4>
-            <div id="profileListings" class="d-flex flex-wrap"></div>
-        </div>
+      <div id="specificListing" class="bg-light"></div>
+      <svg viewBox="0 0 500 50" preserveAspectRatio="xMinYMin meet">
+        <path
+          class="layer-fill"
+          d="M0, 30 C200, -10 350, 70 500, 30 L500, 00 L0, 0 Z"
+        ></path>
+      </svg>
+      <div class="loading_icon"></div>
+      <div class="width mx-auto">
+        <h4 id="moreListingsTitle" class="ps-2 mb-5"></h4>
+        <div id="profileListings" class="d-flex flex-wrap"></div>
+      </div>
     </main>
-    <footer class="py-3 mt-5 text-center bg-light">Jonas Hope copyright 2023</footer>
-    <!-- <script src="/Semester-Project-2/src/js/index.mjs" type="module"></script> -->
-    <script src="../../src/js/index.mjs" type="module"></script>
-</body>
+    <footer class="py-3 mt-5 text-center bg-light">
+      Jonas Hope copyright 2023
+    </footer>
+    <script src="/Semester-Project-2/src/js/index.mjs" type="module"></script>
+    <!-- <script src="../../src/js/index.mjs" type="module"></script> -->
+  </body>
 </html>

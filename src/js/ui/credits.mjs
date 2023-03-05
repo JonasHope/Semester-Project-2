@@ -1,20 +1,19 @@
 export function credits(profileData) {
+  setTimeout(function () {
+    const creditContainer = document.createElement("div");
+    const credits = document.querySelector("#bidHeader");
 
-    setTimeout(function() {
+    credits.innerText =
+      "Available credits:" + " " + "£" + " " + profileData.credits;
 
-        const creditContainer = document.createElement('div')
-        const credits = document.querySelector('#bidHeader')
+    if (profileData.credits === undefined) {
+      credits.innerText = "Login to bid on listing";
+    }
 
-        credits.innerText = 'Available credits:' + ' ' + '£' + ' ' + profileData.credits
-
-        if (profileData.credits === undefined) {
-            credits.innerText = 'Login to bid on listing'
-        }
-
-        return creditContainer
-    }, 3000);
+    return creditContainer;
+  }, 3000);
 }
 
 export function showCredits(profileData, parent) {
-    parent.append(credits(profileData))
+  parent.append(credits(profileData));
 }

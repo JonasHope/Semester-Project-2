@@ -1,5 +1,5 @@
 export function clearElement(element) {
-    while (element.lastElementChild) {
+  while (element.lastElementChild) {
     element.removeChild(element.lastElementChild);
-    }
+  }
 }
