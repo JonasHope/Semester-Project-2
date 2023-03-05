@@ -12,20 +12,20 @@ This is my semester project 2 - Online auction house
 * A registered user may view Bids made on a Listing
 * An unregistered user may search through Listings
 
-##Buildt with
+## Buildt with
 
 ### SASS/SCSS/CSS
 
-###Bootstrap 
+### Bootstrap 
 
-##Hosting service
+## Hosting service
 
 ### Github Pages
 https://jonashope.github.io/Semester-Project-2/
 
-##If you open the project in VScode
-
-* run: 'npm i bootstrap'
-
+## If you open the project in VScode
+```
+run: 'npm i bootstrap'
+```
 * Change script src in the bottom of HTML files, 
 * comment off the active script src, and activate the code which is currently commented off.
