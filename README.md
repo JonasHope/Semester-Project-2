@@ -13,10 +13,13 @@ This is my semester project 2 - Online auction house
 * An unregistered user may search through Listings
 
 ##Buildt with
+
 ### SASS/SCSS/CSS
+
 ###Bootstrap 
 
 ##Hosting service
+
 ### Github Pages
 https://jonashope.github.io/Semester-Project-2/
 
