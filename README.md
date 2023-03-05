@@ -14,9 +14,10 @@ This is my semester project 2 - Online auction house
 
 ## Buildt with
 
-### SASS/SCSS/CSS
+#### SASS/SCSS/CSS
 
-### Bootstrap 
+#### Bootstrap 
+
 
 ## Hosting service
 
