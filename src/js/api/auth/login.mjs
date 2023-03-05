@@ -22,7 +22,6 @@ export async function login(profile) {
   storage.save("profile", user);
 
   if (response.ok) {
-    alert("You logged in successfully! Click OK to proceed");
     setTimeout(function () {
       window.location.href = `../../pages/listings`;
     }, 1000);
