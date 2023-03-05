@@ -16,11 +16,6 @@ This is my semester project 2 - Online auction house
 
 [![My Skills](https://skillicons.dev/icons?i=js,html,css,sass,bootstrap,vscode,)](https://skillicons.dev)
 
-#### SASS/SCSS/CSS
-
-#### Bootstrap 
-
-
 ## Hosting service
 
 ### Github Pages
